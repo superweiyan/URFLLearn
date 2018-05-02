@@ -1,6 +1,17 @@
-A: How are you feeling, John?
-B: Oh, not too bad, but I've got to stay in bed.
-A: Do more exercises after you are healthy.
-B: Ok, I will. You have said that many times.
-A: Are you hungry? Do you want me to buy something for you to eat?
-B: No, there's no need. Thank you all the same.
+A:
+How are you feeling, John?
+
+B:
+Oh, not too bad, but I've got to stay in bed.
+
+A:
+Do more exercises after you are healthy.
+
+B:
+Ok, I will. You have said that many times.
+
+A:
+Are you hungry? Do you want me to buy something for you to eat?
+
+B:
+No, there's no need. Thank you all the same.

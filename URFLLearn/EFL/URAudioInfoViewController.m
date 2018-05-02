@@ -27,11 +27,20 @@
     self.view.backgroundColor = [UIColor colorWithString:URBackgroudColor];
     
     [self initViews];
+    [self initData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initData
+{
+    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"audioContext.txt" ofType:nil];
+    NSData *data = [NSData dataWithContentsOfFile:audioPath options:0 error:nil];
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    self.infoTextView.text = str;
 }
 
 - (void)initViews
@@ -47,6 +56,7 @@
     }];
     
     self.infoTextView = [[UITextView alloc] init];
+    self.infoTextView.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:self.infoTextView];
     
     [self.infoTextView mas_makeConstraints:^(MASConstraintMaker *make) {

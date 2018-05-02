@@ -13,7 +13,7 @@
 @interface URAudioInfoView()
 
 @property (nonatomic, strong) UIButton  *playBtn;               //开始/暂停
-@property (nonatomic, strong) UIView    *volumeControlBtn;      //声音大小
+@property (nonatomic, strong) UIButton  *volumeControlBtn;      //声音大小
 @property (nonatomic, strong) UIView    *progressView;          //播放进度
 @property (nonatomic, strong) UIButton  *infPlayConfigBtn;      //无限循环按钮
 
@@ -21,6 +21,8 @@
 @property (nonatomic, strong) AVPlayerItem  *playItem;
 @property (nonatomic, strong) id            timeObser;
 @property (nonatomic, assign) BOOL          isInfPlay;
+@property (nonatomic, strong) UISlider      *sider;
+@property (nonatomic, assign) CGFloat       currentVolumeValue;
 
 @end
 
@@ -63,6 +65,37 @@
 
 #pragma mark - action
 
+- (void)onvolumeControlClicked:(id)sender
+{
+    if (self.sider) {
+        [self.sider removeFromSuperview];
+        self.sider = nil;
+    }
+    else {
+        self.sider = [[UISlider alloc] init];
+        self.sider.minimumValue = 0.0;
+        self.sider.maximumValue = 1.0;
+        self.sider.value = self.currentVolumeValue;
+        [self.sider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+        [[UIApplication sharedApplication].keyWindow addSubview:self.sider];
+        [self.sider mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.mas_equalTo(self).mas_offset(40);
+            make.trailing.mas_equalTo(self).mas_offset(-40);
+            make.height.mas_equalTo(15);
+            make.bottom.mas_equalTo(self).mas_offset(-60);
+        }];
+    }
+}
+
+- (void)sliderValueChanged:(id)sender
+{
+    UISlider *control = (UISlider *)sender;
+    if(control == self.sider){
+        self.currentVolumeValue = control.value;
+        self.player.volume = self.currentVolumeValue;
+    }
+}
+
 - (void)onPlayClicked:(id)sender
 {
     [self addAudioObserver];
@@ -87,19 +120,6 @@
         }
     }
 }
-
-//#pragma mark - TimerObserver
-//- (void)addVideoTimerObserver {
-////    __weak typeof (self)self_ = self;
-//     self.timeObser = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1, 1) queue:NULL usingBlock:^(CMTime time) {
-////        float currentTimeValue = time.value*1.0/time.timescale/self_.videoLength;
-////        NSString *currentString = [self.self_ getStringFromCMTime:time];
-//    }];
-//}
-//- (void)removeVideoTimerObserver {
-//    [_player removeTimeObserver:self.timeObser];
-//}
-
 
 // 播放结束的时候，会调用这个通知
 - (void)onPlayFinishNotification:(NSNotification *)notification
@@ -128,19 +148,23 @@
 {
     if(!_player) {
         _player = [[AVPlayer alloc] init];
+        _player.volume = self.currentVolumeValue;
     }
     return _player;
 }
 
 - (void)initNotification
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPlayFinishNotification:)
-                                                 name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onPlayFinishNotification:)
+                                                 name:AVPlayerItemDidPlayToEndTimeNotification
+                                               object:nil];
 }
 
 - (void)initData
 {
     self.isInfPlay = NO;
+    self.currentVolumeValue = 0.5;
 }
 
 - (void)initViews
@@ -155,7 +179,8 @@
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
-    self.volumeControlBtn = [[UIView alloc] init];
+    self.volumeControlBtn = [[UIButton alloc] init];
+    [self.volumeControlBtn addTarget:self action:@selector(onvolumeControlClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.volumeControlBtn.backgroundColor = [UIColor blueColor];
     [self addSubview:self.volumeControlBtn];
     
@@ -185,7 +210,6 @@
         make.trailing.mas_equalTo(self).mas_offset(-10);
         make.height.mas_equalTo(30);
     }];
-    
 }
 
 
