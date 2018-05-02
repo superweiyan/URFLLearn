@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61772D20995F25009A5D02 /* AppDelegate.m */; };
+		6E61773120995F25009A5D02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61773020995F25009A5D02 /* ViewController.m */; };
+		6E61773420995F25009A5D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773220995F25009A5D02 /* Main.storyboard */; };
+		6E61773620995F27009A5D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773520995F27009A5D02 /* Assets.xcassets */; };
+		6E61773920995F27009A5D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773720995F27009A5D02 /* LaunchScreen.storyboard */; };
+		6E61773C20995F27009A5D02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61773B20995F27009A5D02 /* main.m */; };
+		6E61774620995F27009A5D02 /* URFLLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61774520995F27009A5D02 /* URFLLearnTests.m */; };
+		6E61775120995F27009A5D02 /* URFLLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61775020995F27009A5D02 /* URFLLearnUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E61774220995F27009A5D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E61772120995F25009A5D02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E61772820995F25009A5D02;
+			remoteInfo = URFLLearn;
+		};
+		6E61774D20995F27009A5D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E61772120995F25009A5D02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E61772820995F25009A5D02;
+			remoteInfo = URFLLearn;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E61772920995F25009A5D02 /* URFLLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URFLLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E61772C20995F25009A5D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E61772D20995F25009A5D02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E61772F20995F25009A5D02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6E61773020995F25009A5D02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6E61773320995F25009A5D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E61773520995F27009A5D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E61773820995F27009A5D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6E61773A20995F27009A5D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E61773B20995F27009A5D02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E61774120995F27009A5D02 /* URFLLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URFLLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E61774520995F27009A5D02 /* URFLLearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URFLLearnTests.m; sourceTree = "<group>"; };
+		6E61774720995F27009A5D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E61774C20995F27009A5D02 /* URFLLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URFLLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E61775020995F27009A5D02 /* URFLLearnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URFLLearnUITests.m; sourceTree = "<group>"; };
+		6E61775220995F27009A5D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E61772620995F25009A5D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E61773E20995F27009A5D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E61774920995F27009A5D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E61772020995F25009A5D02 = {
+			isa = PBXGroup;
+			children = (
+				6E61772B20995F25009A5D02 /* URFLLearn */,
+				6E61774420995F27009A5D02 /* URFLLearnTests */,
+				6E61774F20995F27009A5D02 /* URFLLearnUITests */,
+				6E61772A20995F25009A5D02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E61772A20995F25009A5D02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E61772920995F25009A5D02 /* URFLLearn.app */,
+				6E61774120995F27009A5D02 /* URFLLearnTests.xctest */,
+				6E61774C20995F27009A5D02 /* URFLLearnUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E61772B20995F25009A5D02 /* URFLLearn */ = {
+			isa = PBXGroup;
+			children = (
+				6E61772C20995F25009A5D02 /* AppDelegate.h */,
+				6E61772D20995F25009A5D02 /* AppDelegate.m */,
+				6E61772F20995F25009A5D02 /* ViewController.h */,
+				6E61773020995F25009A5D02 /* ViewController.m */,
+				6E61773220995F25009A5D02 /* Main.storyboard */,
+				6E61773520995F27009A5D02 /* Assets.xcassets */,
+				6E61773720995F27009A5D02 /* LaunchScreen.storyboard */,
+				6E61773A20995F27009A5D02 /* Info.plist */,
+				6E61773B20995F27009A5D02 /* main.m */,
+			);
+			path = URFLLearn;
+			sourceTree = "<group>";
+		};
+		6E61774420995F27009A5D02 /* URFLLearnTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E61774520995F27009A5D02 /* URFLLearnTests.m */,
+				6E61774720995F27009A5D02 /* Info.plist */,
+			);
+			path = URFLLearnTests;
+			sourceTree = "<group>";
+		};
+		6E61774F20995F27009A5D02 /* URFLLearnUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6E61775020995F27009A5D02 /* URFLLearnUITests.m */,
+				6E61775220995F27009A5D02 /* Info.plist */,
+			);
+			path = URFLLearnUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E61772820995F25009A5D02 /* URFLLearn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E61775520995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearn" */;
+			buildPhases = (
+				6E61772520995F25009A5D02 /* Sources */,
+				6E61772620995F25009A5D02 /* Frameworks */,
+				6E61772720995F25009A5D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = URFLLearn;
+			productName = URFLLearn;
+			productReference = 6E61772920995F25009A5D02 /* URFLLearn.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E61774020995F27009A5D02 /* URFLLearnTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E61775820995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearnTests" */;
+			buildPhases = (
+				6E61773D20995F27009A5D02 /* Sources */,
+				6E61773E20995F27009A5D02 /* Frameworks */,
+				6E61773F20995F27009A5D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E61774320995F27009A5D02 /* PBXTargetDependency */,
+			);
+			name = URFLLearnTests;
+			productName = URFLLearnTests;
+			productReference = 6E61774120995F27009A5D02 /* URFLLearnTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E61774B20995F27009A5D02 /* URFLLearnUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E61775B20995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearnUITests" */;
+			buildPhases = (
+				6E61774820995F27009A5D02 /* Sources */,
+				6E61774920995F27009A5D02 /* Frameworks */,
+				6E61774A20995F27009A5D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E61774E20995F27009A5D02 /* PBXTargetDependency */,
+			);
+			name = URFLLearnUITests;
+			productName = URFLLearnUITests;
+			productReference = 6E61774C20995F27009A5D02 /* URFLLearnUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E61772120995F25009A5D02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "lin weiyan";
+				TargetAttributes = {
+					6E61772820995F25009A5D02 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					6E61774020995F27009A5D02 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 6E61772820995F25009A5D02;
+					};
+					6E61774B20995F27009A5D02 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 6E61772820995F25009A5D02;
+					};
+				};
+			};
+			buildConfigurationList = 6E61772420995F25009A5D02 /* Build configuration list for PBXProject "URFLLearn" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E61772020995F25009A5D02;
+			productRefGroup = 6E61772A20995F25009A5D02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E61772820995F25009A5D02 /* URFLLearn */,
+				6E61774020995F27009A5D02 /* URFLLearnTests */,
+				6E61774B20995F27009A5D02 /* URFLLearnUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E61772720995F25009A5D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E61773920995F27009A5D02 /* LaunchScreen.storyboard in Resources */,
+				6E61773620995F27009A5D02 /* Assets.xcassets in Resources */,
+				6E61773420995F25009A5D02 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E61773F20995F27009A5D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E61774A20995F27009A5D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E61772520995F25009A5D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E61773120995F25009A5D02 /* ViewController.m in Sources */,
+				6E61773C20995F27009A5D02 /* main.m in Sources */,
+				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E61773D20995F27009A5D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E61774620995F27009A5D02 /* URFLLearnTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E61774820995F27009A5D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E61775120995F27009A5D02 /* URFLLearnUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E61774320995F27009A5D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E61772820995F25009A5D02 /* URFLLearn */;
+			targetProxy = 6E61774220995F27009A5D02 /* PBXContainerItemProxy */;
+		};
+		6E61774E20995F27009A5D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E61772820995F25009A5D02 /* URFLLearn */;
+			targetProxy = 6E61774D20995F27009A5D02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E61773220995F25009A5D02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E61773320995F25009A5D02 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6E61773720995F27009A5D02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E61773820995F27009A5D02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E61775320995F27009A5D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E61775420995F27009A5D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E61775620995F27009A5D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJD5F25QWG;
+				INFOPLIST_FILE = URFLLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unreal.URFLLearn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E61775720995F27009A5D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJD5F25QWG;
+				INFOPLIST_FILE = URFLLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unreal.URFLLearn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6E61775920995F27009A5D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJD5F25QWG;
+				INFOPLIST_FILE = URFLLearnTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unreal.URFLLearnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URFLLearn.app/URFLLearn";
+			};
+			name = Debug;
+		};
+		6E61775A20995F27009A5D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJD5F25QWG;
+				INFOPLIST_FILE = URFLLearnTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unreal.URFLLearnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URFLLearn.app/URFLLearn";
+			};
+			name = Release;
+		};
+		6E61775C20995F27009A5D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJD5F25QWG;
+				INFOPLIST_FILE = URFLLearnUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unreal.URFLLearnUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = URFLLearn;
+			};
+			name = Debug;
+		};
+		6E61775D20995F27009A5D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PJD5F25QWG;
+				INFOPLIST_FILE = URFLLearnUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.unreal.URFLLearnUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = URFLLearn;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E61772420995F25009A5D02 /* Build configuration list for PBXProject "URFLLearn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E61775320995F27009A5D02 /* Debug */,
+				6E61775420995F27009A5D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E61775520995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E61775620995F27009A5D02 /* Debug */,
+				6E61775720995F27009A5D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E61775820995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearnTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E61775920995F27009A5D02 /* Debug */,
+				6E61775A20995F27009A5D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E61775B20995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearnUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E61775C20995F27009A5D02 /* Debug */,
+				6E61775D20995F27009A5D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E61772120995F25009A5D02 /* Project object */;
+}
