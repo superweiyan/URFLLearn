@@ -15,6 +15,15 @@
 		6E61773C20995F27009A5D02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61773B20995F27009A5D02 /* main.m */; };
 		6E61774620995F27009A5D02 /* URFLLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61774520995F27009A5D02 /* URFLLearnTests.m */; };
 		6E61775120995F27009A5D02 /* URFLLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61775020995F27009A5D02 /* URFLLearnUITests.m */; };
+		6E6177642099984E009A5D02 /* URAudioLearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6177632099984E009A5D02 /* URAudioLearnViewController.m */; };
+		6E61776720999D39009A5D02 /* URAudioInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776620999D39009A5D02 /* URAudioInfoViewController.m */; };
+		6E61776B20999DE9009A5D02 /* URAudioInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776A20999DE9009A5D02 /* URAudioInfoView.m */; };
+		6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776E20999FF7009A5D02 /* URColorConfig.m */; };
+		6E6177732099A0C5009A5D02 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6177722099A0C5009A5D02 /* UIColor+Hex.m */; };
+		6E6177752099AA64009A5D02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6177742099AA64009A5D02 /* AVFoundation.framework */; };
+		6E61777A2099B9CD009A5D02 /* audioContext.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E6177782099B9CD009A5D02 /* audioContext.txt */; };
+		6E61777C2099C10D009A5D02 /* 2272395.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E61777B2099C10D009A5D02 /* 2272395.MP3 */; };
+		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07508C9FC901B7DE2BA8E386 /* Pods-URFLLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		6987657F61A977D66274B525 /* Pods_URFLLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URFLLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61772920995F25009A5D02 /* URFLLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URFLLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61772C20995F25009A5D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E61772D20995F25009A5D02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +62,20 @@
 		6E61774C20995F27009A5D02 /* URFLLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URFLLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61775020995F27009A5D02 /* URFLLearnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URFLLearnUITests.m; sourceTree = "<group>"; };
 		6E61775220995F27009A5D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E6177622099984E009A5D02 /* URAudioLearnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URAudioLearnViewController.h; sourceTree = "<group>"; };
+		6E6177632099984E009A5D02 /* URAudioLearnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URAudioLearnViewController.m; sourceTree = "<group>"; };
+		6E61776520999D39009A5D02 /* URAudioInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URAudioInfoViewController.h; sourceTree = "<group>"; };
+		6E61776620999D39009A5D02 /* URAudioInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URAudioInfoViewController.m; sourceTree = "<group>"; };
+		6E61776920999DE9009A5D02 /* URAudioInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URAudioInfoView.h; sourceTree = "<group>"; };
+		6E61776A20999DE9009A5D02 /* URAudioInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URAudioInfoView.m; sourceTree = "<group>"; };
+		6E61776D20999FF7009A5D02 /* URColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URColorConfig.h; sourceTree = "<group>"; };
+		6E61776E20999FF7009A5D02 /* URColorConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URColorConfig.m; sourceTree = "<group>"; };
+		6E6177712099A0C5009A5D02 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		6E6177722099A0C5009A5D02 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		6E6177742099AA64009A5D02 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6E6177782099B9CD009A5D02 /* audioContext.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = audioContext.txt; sourceTree = "<group>"; };
+		6E61777B2099C10D009A5D02 /* 2272395.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2272395.MP3; sourceTree = "<group>"; };
+		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6177752099AA64009A5D02 /* AVFoundation.framework in Frameworks */,
+				EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		457CFAB83FF5347EBA37D63D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07508C9FC901B7DE2BA8E386 /* Pods-URFLLearn.debug.xcconfig */,
+				CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6E61772020995F25009A5D02 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +121,8 @@
 				6E61774420995F27009A5D02 /* URFLLearnTests */,
 				6E61774F20995F27009A5D02 /* URFLLearnUITests */,
 				6E61772A20995F25009A5D02 /* Products */,
+				457CFAB83FF5347EBA37D63D /* Pods */,
+				FD9B45E96F827841DC402356 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +139,10 @@
 		6E61772B20995F25009A5D02 /* URFLLearn */ = {
 			isa = PBXGroup;
 			children = (
+				6E6177762099B924009A5D02 /* Resource */,
+				6E6177702099A09B009A5D02 /* Utils */,
+				6E61776C20999FDD009A5D02 /* CommonConfig */,
+				6E6177612099983D009A5D02 /* EFL */,
 				6E61772C20995F25009A5D02 /* AppDelegate.h */,
 				6E61772D20995F25009A5D02 /* AppDelegate.m */,
 				6E61772F20995F25009A5D02 /* ViewController.h */,
@@ -132,6 +174,63 @@
 			path = URFLLearnUITests;
 			sourceTree = "<group>";
 		};
+		6E6177612099983D009A5D02 /* EFL */ = {
+			isa = PBXGroup;
+			children = (
+				6E61776820999DD4009A5D02 /* Views */,
+				6E6177622099984E009A5D02 /* URAudioLearnViewController.h */,
+				6E6177632099984E009A5D02 /* URAudioLearnViewController.m */,
+				6E61776520999D39009A5D02 /* URAudioInfoViewController.h */,
+				6E61776620999D39009A5D02 /* URAudioInfoViewController.m */,
+			);
+			path = EFL;
+			sourceTree = "<group>";
+		};
+		6E61776820999DD4009A5D02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E61776920999DE9009A5D02 /* URAudioInfoView.h */,
+				6E61776A20999DE9009A5D02 /* URAudioInfoView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E61776C20999FDD009A5D02 /* CommonConfig */ = {
+			isa = PBXGroup;
+			children = (
+				6E61776D20999FF7009A5D02 /* URColorConfig.h */,
+				6E61776E20999FF7009A5D02 /* URColorConfig.m */,
+			);
+			path = CommonConfig;
+			sourceTree = "<group>";
+		};
+		6E6177702099A09B009A5D02 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6E6177712099A0C5009A5D02 /* UIColor+Hex.h */,
+				6E6177722099A0C5009A5D02 /* UIColor+Hex.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6E6177762099B924009A5D02 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6E61777B2099C10D009A5D02 /* 2272395.MP3 */,
+				6E6177782099B9CD009A5D02 /* audioContext.txt */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FD9B45E96F827841DC402356 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E6177742099AA64009A5D02 /* AVFoundation.framework */,
+				6987657F61A977D66274B525 /* Pods_URFLLearn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E61775520995F27009A5D02 /* Build configuration list for PBXNativeTarget "URFLLearn" */;
 			buildPhases = (
+				CB903A09DA058F3741083D33 /* [CP] Check Pods Manifest.lock */,
 				6E61772520995F25009A5D02 /* Sources */,
 				6E61772620995F25009A5D02 /* Frameworks */,
 				6E61772720995F25009A5D02 /* Resources */,
+				A4EF0D84850131DE27E55700 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,9 +336,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E61777A2099B9CD009A5D02 /* audioContext.txt in Resources */,
 				6E61773920995F27009A5D02 /* LaunchScreen.storyboard in Resources */,
 				6E61773620995F27009A5D02 /* Assets.xcassets in Resources */,
 				6E61773420995F25009A5D02 /* Main.storyboard in Resources */,
+				6E61777C2099C10D009A5D02 /* 2272395.MP3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +360,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A4EF0D84850131DE27E55700 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AppleReachability/AppleReachability.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppleReachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB903A09DA058F3741083D33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-URFLLearn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E61772520995F25009A5D02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6E61773120995F25009A5D02 /* ViewController.m in Sources */,
+				6E61776720999D39009A5D02 /* URAudioInfoViewController.m in Sources */,
+				6E61776B20999DE9009A5D02 /* URAudioInfoView.m in Sources */,
+				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
+				6E6177642099984E009A5D02 /* URAudioLearnViewController.m in Sources */,
+				6E6177732099A0C5009A5D02 /* UIColor+Hex.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
 			);
@@ -431,6 +588,7 @@
 		};
 		6E61775620995F27009A5D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07508C9FC901B7DE2BA8E386 /* Pods-URFLLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +607,7 @@
 		};
 		6E61775720995F27009A5D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
