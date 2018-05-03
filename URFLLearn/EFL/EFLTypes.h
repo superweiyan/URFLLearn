@@ -11,3 +11,12 @@
 @interface EFLTypes : NSObject
 
 @end
+
+
+@interface EFLAudioModel : NSObject
+
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, assign) BOOL      isOther;
+@property (nonatomic, assign) float     height;
+
+@end

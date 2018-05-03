@@ -1,16 +1,10 @@
 //
-//  EFLTypes.m
+//  URLayoutConfig.m
 //  URFLLearn
 //
 //  Created by lin weiyan on 2018/5/3.
 //  Copyright © 2018 lin weiyan. All rights reserved.
 //
 
-#import "EFLTypes.h"
+#import "URLayoutConfig.h"
 
-@implementation EFLTypes
-
-@end
-
-@implementation EFLAudioModel
-@end

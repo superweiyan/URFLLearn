@@ -13,6 +13,8 @@
 #import "UIColor+Hex.h"
 #import "NSString+Utils.h"
 #import "UREFLAudioDialogueTableViewCell.h"
+#import "EFLTypes.h"
+#import "UREFLAudioDialoguePeerTableViewCell.h"
 
 @interface URAudioInfoViewController()<UITableViewDelegate, UITableViewDataSource>
 
@@ -40,6 +42,11 @@
 
 #pragma mark - delegate
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewAutomaticDimension;
+//}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dailogueItemArray.count;
@@ -47,11 +54,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UREFLAudioDialogueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AudioDialogueIndentifer"];
     if (indexPath.row < self.dailogueItemArray.count) {
         
+        EFLAudioModel *model = [self.dailogueItemArray objectAtIndex:indexPath.row];
+        
+        if (model.isOther) {
+            UREFLAudioDialogueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AudioDialogueIndentifer"];
+            cell.audioModel = model;
+            return cell;
+        }
+        else {
+            UREFLAudioDialoguePeerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AudioDialoguePeerIndentifer"];
+            cell.audioModel = model;
+            return cell;
+        }
     }
-    return cell;
+    return [UITableViewCell new];
 }
 
 #pragma mark - init
@@ -82,8 +100,12 @@
     self.infoTextView = [[UITableView alloc] init];
     self.infoTextView.delegate = self;
     self.infoTextView.dataSource = self;
+    self.infoTextView.estimatedRowHeight = 80;
+    self.infoTextView.rowHeight = UITableViewAutomaticDimension;
+    
     [self.view addSubview:self.infoTextView];
     [self.infoTextView registerClass:[UREFLAudioDialogueTableViewCell class] forCellReuseIdentifier:@"AudioDialogueIndentifer"];
+    [self.infoTextView registerClass:[UREFLAudioDialoguePeerTableViewCell class] forCellReuseIdentifier:@"AudioDialoguePeerIndentifer"];
     
     [self.infoTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.navigationController.navigationBar.frame.size.height + 20 + 10);
@@ -96,11 +118,18 @@
 
 - (NSArray *)getDialogue:(NSDictionary *)dict
 {
+    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
+    
     NSArray *dialogue = [dict objectForKey:@"dialogue"];
     if ([dialogue isKindOfClass:[NSArray class]]) {
-        return dialogue;
+        for (int i = 0; i < dialogue.count; i++) {
+            EFLAudioModel *model = [[EFLAudioModel alloc] init];
+            model.content = [dialogue objectAtIndex:i];
+            model.isOther = i % 2;
+            [itemArray addObject:model];
+        }
     }
-    return nil;
+    return itemArray;
 }
 
 @end

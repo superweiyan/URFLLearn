@@ -1,5 +1,5 @@
 //
-//  UREFLAudioDialogueTableViewCell.h
+//  UREFLAudioDialoguePeerTableViewCell.h
 //  URFLLearn
 //
 //  Created by lin weiyan on 2018/5/3.
@@ -10,7 +10,7 @@
 
 @class EFLAudioModel;
 
-@interface UREFLAudioDialogueTableViewCell : UITableViewCell
+@interface UREFLAudioDialoguePeerTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) EFLAudioModel *audioModel;
 

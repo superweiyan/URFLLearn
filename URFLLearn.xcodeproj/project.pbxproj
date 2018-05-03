@@ -28,6 +28,8 @@
 		6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB004F209AE8E100870514 /* EFLTypes.m */; };
 		6ECB0053209AE8F200870514 /* EFLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0052209AE8F200870514 /* EFLCore.m */; };
 		6ECB0056209AE90200870514 /* EFLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0055209AE90200870514 /* EFLModule.m */; };
+		6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0058209AFAA500870514 /* URLayoutConfig.m */; };
+		6ECB005C209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB005B209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,10 @@
 		6ECB0052209AE8F200870514 /* EFLCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLCore.m; sourceTree = "<group>"; };
 		6ECB0054209AE90200870514 /* EFLModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLModule.h; sourceTree = "<group>"; };
 		6ECB0055209AE90200870514 /* EFLModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLModule.m; sourceTree = "<group>"; };
+		6ECB0057209AFAA500870514 /* URLayoutConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLayoutConfig.h; sourceTree = "<group>"; };
+		6ECB0058209AFAA500870514 /* URLayoutConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLayoutConfig.m; sourceTree = "<group>"; };
+		6ECB005A209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UREFLAudioDialoguePeerTableViewCell.h; sourceTree = "<group>"; };
+		6ECB005B209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UREFLAudioDialoguePeerTableViewCell.m; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +226,8 @@
 			children = (
 				6E61776D20999FF7009A5D02 /* URColorConfig.h */,
 				6E61776E20999FF7009A5D02 /* URColorConfig.m */,
+				6ECB0057209AFAA500870514 /* URLayoutConfig.h */,
+				6ECB0058209AFAA500870514 /* URLayoutConfig.m */,
 			);
 			path = CommonConfig;
 			sourceTree = "<group>";
@@ -249,6 +257,8 @@
 			children = (
 				6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */,
 				6ECB004A209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.h */,
+				6ECB005A209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.h */,
+				6ECB005B209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -468,7 +478,9 @@
 				6E61776B20999DE9009A5D02 /* URAudioInfoView.m in Sources */,
 				6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */,
 				6ECB0056209AE90200870514 /* EFLModule.m in Sources */,
+				6ECB005C209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
 				6ECB0053209AE8F200870514 /* EFLCore.m in Sources */,
+				6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */,
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
 				6EA640AF209AAEF4000E8905 /* NSString+Utils.m in Sources */,
 				6E6177642099984E009A5D02 /* URAudioLearnViewController.m in Sources */,
