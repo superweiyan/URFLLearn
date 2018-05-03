@@ -19,17 +19,18 @@
 		6E61776720999D39009A5D02 /* URAudioInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776620999D39009A5D02 /* URAudioInfoViewController.m */; };
 		6E61776B20999DE9009A5D02 /* URAudioInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776A20999DE9009A5D02 /* URAudioInfoView.m */; };
 		6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776E20999FF7009A5D02 /* URColorConfig.m */; };
-		6E6177732099A0C5009A5D02 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6177722099A0C5009A5D02 /* UIColor+Hex.m */; };
 		6E6177752099AA64009A5D02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6177742099AA64009A5D02 /* AVFoundation.framework */; };
 		6E61777A2099B9CD009A5D02 /* audioContext.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E6177782099B9CD009A5D02 /* audioContext.txt */; };
 		6E61777C2099C10D009A5D02 /* 2272395.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E61777B2099C10D009A5D02 /* 2272395.MP3 */; };
-		6EA640AF209AAEF4000E8905 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA640AE209AAEF4000E8905 /* NSString+Utils.m */; };
 		6ECB004B209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */; };
 		6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB004F209AE8E100870514 /* EFLTypes.m */; };
 		6ECB0053209AE8F200870514 /* EFLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0052209AE8F200870514 /* EFLCore.m */; };
 		6ECB0056209AE90200870514 /* EFLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0055209AE90200870514 /* EFLModule.m */; };
 		6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0058209AFAA500870514 /* URLayoutConfig.m */; };
 		6ECB005C209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB005B209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m */; };
+		6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0060209B232400870514 /* UIColor+Hex.m */; };
+		6ECB0064209B232400870514 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0062209B232400870514 /* NSString+Utils.m */; };
+		6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0067209B244F00870514 /* URFLNetUtils.m */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,13 +78,9 @@
 		6E61776A20999DE9009A5D02 /* URAudioInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URAudioInfoView.m; sourceTree = "<group>"; };
 		6E61776D20999FF7009A5D02 /* URColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URColorConfig.h; sourceTree = "<group>"; };
 		6E61776E20999FF7009A5D02 /* URColorConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URColorConfig.m; sourceTree = "<group>"; };
-		6E6177712099A0C5009A5D02 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
-		6E6177722099A0C5009A5D02 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		6E6177742099AA64009A5D02 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6E6177782099B9CD009A5D02 /* audioContext.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = audioContext.txt; sourceTree = "<group>"; };
 		6E61777B2099C10D009A5D02 /* 2272395.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2272395.MP3; sourceTree = "<group>"; };
-		6EA640AD209AAEF4000E8905 /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
-		6EA640AE209AAEF4000E8905 /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UREFLAudioDialogueTableViewCell.m; sourceTree = "<group>"; };
 		6ECB004A209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UREFLAudioDialogueTableViewCell.h; sourceTree = "<group>"; };
 		6ECB004E209AE8E100870514 /* EFLTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLTypes.h; sourceTree = "<group>"; };
@@ -96,6 +93,12 @@
 		6ECB0058209AFAA500870514 /* URLayoutConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLayoutConfig.m; sourceTree = "<group>"; };
 		6ECB005A209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UREFLAudioDialoguePeerTableViewCell.h; sourceTree = "<group>"; };
 		6ECB005B209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UREFLAudioDialoguePeerTableViewCell.m; sourceTree = "<group>"; };
+		6ECB005F209B232400870514 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		6ECB0060209B232400870514 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		6ECB0061209B232400870514 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		6ECB0062209B232400870514 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		6ECB0066209B244F00870514 /* URFLNetUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URFLNetUtils.h; sourceTree = "<group>"; };
+		6ECB0067209B244F00870514 /* URFLNetUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URFLNetUtils.m; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +163,7 @@
 		6E61772B20995F25009A5D02 /* URFLLearn */ = {
 			isa = PBXGroup;
 			children = (
+				6ECB005D209B22D200870514 /* Support */,
 				6E6177762099B924009A5D02 /* Resource */,
 				6E6177702099A09B009A5D02 /* Utils */,
 				6E61776C20999FDD009A5D02 /* CommonConfig */,
@@ -235,10 +239,8 @@
 		6E6177702099A09B009A5D02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6E6177712099A0C5009A5D02 /* UIColor+Hex.h */,
-				6E6177722099A0C5009A5D02 /* UIColor+Hex.m */,
-				6EA640AD209AAEF4000E8905 /* NSString+Utils.h */,
-				6EA640AE209AAEF4000E8905 /* NSString+Utils.m */,
+				6ECB0065209B242000870514 /* Net */,
+				6ECB005E209B232400870514 /* Category */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -279,6 +281,33 @@
 				6ECB0055209AE90200870514 /* EFLModule.m */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		6ECB005D209B22D200870514 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		6ECB005E209B232400870514 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB005F209B232400870514 /* NSString+Utils.h */,
+				6ECB0060209B232400870514 /* UIColor+Hex.m */,
+				6ECB0061209B232400870514 /* UIColor+Hex.h */,
+				6ECB0062209B232400870514 /* NSString+Utils.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		6ECB0065209B242000870514 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB0066209B244F00870514 /* URFLNetUtils.h */,
+				6ECB0067209B244F00870514 /* URFLNetUtils.m */,
+			);
+			path = Net;
 			sourceTree = "<group>";
 		};
 		FD9B45E96F827841DC402356 /* Frameworks */ = {
@@ -480,12 +509,13 @@
 				6ECB0056209AE90200870514 /* EFLModule.m in Sources */,
 				6ECB005C209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
 				6ECB0053209AE8F200870514 /* EFLCore.m in Sources */,
+				6ECB0064209B232400870514 /* NSString+Utils.m in Sources */,
 				6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */,
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
-				6EA640AF209AAEF4000E8905 /* NSString+Utils.m in Sources */,
+				6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */,
 				6E6177642099984E009A5D02 /* URAudioLearnViewController.m in Sources */,
-				6E6177732099A0C5009A5D02 /* UIColor+Hex.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
+				6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */,
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
 				6ECB004B209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */,
 			);
