@@ -11,11 +11,14 @@
 #import "Masonry.h"
 #import "URColorConfig.h"
 #import "UIColor+Hex.h"
+#import "NSString+Utils.h"
+#import "UREFLAudioDialogueTableViewCell.h"
 
-@interface URAudioInfoViewController ()
+@interface URAudioInfoViewController()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) URAudioInfoView   *infoView;
-@property (nonatomic, strong) UITextView        *infoTextView;
+@property (nonatomic, strong) UITableView       *infoTextView;
+@property (nonatomic, strong) NSArray           *dailogueItemArray;
 
 @end
 
@@ -35,12 +38,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dailogueItemArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UREFLAudioDialogueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AudioDialogueIndentifer"];
+    if (indexPath.row < self.dailogueItemArray.count) {
+        
+    }
+    return cell;
+}
+
+#pragma mark - init
+
 - (void)initData
 {
     NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"audioContext.txt" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:audioPath options:0 error:nil];
     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    self.infoTextView.text = str;
+    
+    NSDictionary *dict = [str convertJson];
+    
+    self.dailogueItemArray = [self getDialogue:dict];
 }
 
 - (void)initViews
@@ -55,9 +79,11 @@
         make.bottom.mas_equalTo(self.view).mas_offset(-10);
     }];
     
-    self.infoTextView = [[UITextView alloc] init];
-    self.infoTextView.font = [UIFont systemFontOfSize:17];
+    self.infoTextView = [[UITableView alloc] init];
+    self.infoTextView.delegate = self;
+    self.infoTextView.dataSource = self;
     [self.view addSubview:self.infoTextView];
+    [self.infoTextView registerClass:[UREFLAudioDialogueTableViewCell class] forCellReuseIdentifier:@"AudioDialogueIndentifer"];
     
     [self.infoTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.navigationController.navigationBar.frame.size.height + 20 + 10);
@@ -66,14 +92,15 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - parser
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSArray *)getDialogue:(NSDictionary *)dict
+{
+    NSArray *dialogue = [dict objectForKey:@"dialogue"];
+    if ([dialogue isKindOfClass:[NSArray class]]) {
+        return dialogue;
+    }
+    return nil;
 }
-*/
 
 @end

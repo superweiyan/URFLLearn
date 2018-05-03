@@ -23,6 +23,11 @@
 		6E6177752099AA64009A5D02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6177742099AA64009A5D02 /* AVFoundation.framework */; };
 		6E61777A2099B9CD009A5D02 /* audioContext.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E6177782099B9CD009A5D02 /* audioContext.txt */; };
 		6E61777C2099C10D009A5D02 /* 2272395.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E61777B2099C10D009A5D02 /* 2272395.MP3 */; };
+		6EA640AF209AAEF4000E8905 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA640AE209AAEF4000E8905 /* NSString+Utils.m */; };
+		6ECB004B209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */; };
+		6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB004F209AE8E100870514 /* EFLTypes.m */; };
+		6ECB0053209AE8F200870514 /* EFLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0052209AE8F200870514 /* EFLCore.m */; };
+		6ECB0056209AE90200870514 /* EFLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0055209AE90200870514 /* EFLModule.m */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +80,16 @@
 		6E6177742099AA64009A5D02 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6E6177782099B9CD009A5D02 /* audioContext.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = audioContext.txt; sourceTree = "<group>"; };
 		6E61777B2099C10D009A5D02 /* 2272395.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2272395.MP3; sourceTree = "<group>"; };
+		6EA640AD209AAEF4000E8905 /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		6EA640AE209AAEF4000E8905 /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UREFLAudioDialogueTableViewCell.m; sourceTree = "<group>"; };
+		6ECB004A209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UREFLAudioDialogueTableViewCell.h; sourceTree = "<group>"; };
+		6ECB004E209AE8E100870514 /* EFLTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLTypes.h; sourceTree = "<group>"; };
+		6ECB004F209AE8E100870514 /* EFLTypes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLTypes.m; sourceTree = "<group>"; };
+		6ECB0051209AE8F200870514 /* EFLCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLCore.h; sourceTree = "<group>"; };
+		6ECB0052209AE8F200870514 /* EFLCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLCore.m; sourceTree = "<group>"; };
+		6ECB0054209AE90200870514 /* EFLModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLModule.h; sourceTree = "<group>"; };
+		6ECB0055209AE90200870514 /* EFLModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLModule.m; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,11 +192,15 @@
 		6E6177612099983D009A5D02 /* EFL */ = {
 			isa = PBXGroup;
 			children = (
+				6ECB004C209AE8B600870514 /* Core */,
+				6ECB004D209AE8B600870514 /* Module */,
 				6E61776820999DD4009A5D02 /* Views */,
 				6E6177622099984E009A5D02 /* URAudioLearnViewController.h */,
 				6E6177632099984E009A5D02 /* URAudioLearnViewController.m */,
 				6E61776520999D39009A5D02 /* URAudioInfoViewController.h */,
 				6E61776620999D39009A5D02 /* URAudioInfoViewController.m */,
+				6ECB004E209AE8E100870514 /* EFLTypes.h */,
+				6ECB004F209AE8E100870514 /* EFLTypes.m */,
 			);
 			path = EFL;
 			sourceTree = "<group>";
@@ -189,6 +208,7 @@
 		6E61776820999DD4009A5D02 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6ECB0048209AE8AC00870514 /* Cell */,
 				6E61776920999DE9009A5D02 /* URAudioInfoView.h */,
 				6E61776A20999DE9009A5D02 /* URAudioInfoView.m */,
 			);
@@ -209,6 +229,8 @@
 			children = (
 				6E6177712099A0C5009A5D02 /* UIColor+Hex.h */,
 				6E6177722099A0C5009A5D02 /* UIColor+Hex.m */,
+				6EA640AD209AAEF4000E8905 /* NSString+Utils.h */,
+				6EA640AE209AAEF4000E8905 /* NSString+Utils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -220,6 +242,33 @@
 				6E6177782099B9CD009A5D02 /* audioContext.txt */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		6ECB0048209AE8AC00870514 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */,
+				6ECB004A209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.h */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6ECB004C209AE8B600870514 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB0051209AE8F200870514 /* EFLCore.h */,
+				6ECB0052209AE8F200870514 /* EFLCore.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6ECB004D209AE8B600870514 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB0054209AE90200870514 /* EFLModule.h */,
+				6ECB0055209AE90200870514 /* EFLModule.m */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		FD9B45E96F827841DC402356 /* Frameworks */ = {
@@ -417,11 +466,16 @@
 				6E61773120995F25009A5D02 /* ViewController.m in Sources */,
 				6E61776720999D39009A5D02 /* URAudioInfoViewController.m in Sources */,
 				6E61776B20999DE9009A5D02 /* URAudioInfoView.m in Sources */,
+				6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */,
+				6ECB0056209AE90200870514 /* EFLModule.m in Sources */,
+				6ECB0053209AE8F200870514 /* EFLCore.m in Sources */,
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
+				6EA640AF209AAEF4000E8905 /* NSString+Utils.m in Sources */,
 				6E6177642099984E009A5D02 /* URAudioLearnViewController.m in Sources */,
 				6E6177732099A0C5009A5D02 /* UIColor+Hex.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
+				6ECB004B209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
