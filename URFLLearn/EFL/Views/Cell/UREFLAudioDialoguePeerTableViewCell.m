@@ -36,6 +36,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        
         self.portView = [[UIImageView alloc] init];
         self.portView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:self.portView];
@@ -69,10 +71,10 @@
         }];
         
         [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(viewMarginTop + 5,
+            make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(viewMarginTop,
                                                                              viewMarginLeading,
-                                                                             viewMarginLeading,
-                                                                             viewMarginBottom));
+                                                                             viewMarginBottom,
+                                                                             viewMarginLeading + viewSpace));
             make.width.mas_lessThanOrEqualTo(self.contentView.frame.size.width * 0.6);
             
             //            make.top.mas_equalTo(self.bubbleImageView.mas_top).mas_offset(viewMarginTop);

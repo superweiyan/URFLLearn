@@ -36,6 +36,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
+        self.backgroundColor = [UIColor clearColor];
+        
         self.portView = [[UIImageView alloc] init];
         self.portView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:self.portView];
@@ -47,8 +50,8 @@
         self.textView = [[UITextView alloc] init];
         self.textView.scrollEnabled = NO;           //关键步骤
         self.textView.backgroundColor = [UIColor greenColor];
-        [self.textView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-        [self.textView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+//        [self.textView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+//        [self.textView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [self.bubbleImageView addSubview:self.textView];
 
         
@@ -59,7 +62,7 @@
         }];
         
         [self.bubbleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.contentView);
+            make.top.mas_equalTo(self.contentView).mas_offset(10);
             make.leading.mas_equalTo(self.portView.mas_trailing).mas_offset(viewLeading);
 //            make.height.mas_equalTo(30);
 //            make.trailing.mas_equalTo(self.contentView).mas_offset(-40);
@@ -69,10 +72,10 @@
         }];
         
         [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(viewMarginTop + 5,
-                                                                             viewMarginLeading,
-                                                                             viewMarginLeading,
-                                                                             viewMarginBottom));
+            make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(viewMarginTop,
+                                                                             viewMarginLeading + viewSpace,
+                                                                             viewMarginBottom,
+                                                                             viewMarginLeading));
             make.width.mas_lessThanOrEqualTo(self.contentView.frame.size.width * 0.6);
             
 //            make.top.mas_equalTo(self.bubbleImageView.mas_top).mas_offset(viewMarginTop);

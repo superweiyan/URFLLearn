@@ -35,9 +35,23 @@
     [self initData];
 }
 
+- (void)dealloc
+{
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+//    if ([self.infoTextView respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [self.infoTextView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+//    }
 }
 
 #pragma mark - delegate
@@ -79,7 +93,6 @@
     NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"audioContext.txt" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:audioPath options:0 error:nil];
     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
     NSDictionary *dict = [str convertJson];
     
     self.dailogueItemArray = [self getDialogue:dict];
@@ -101,8 +114,9 @@
     self.infoTextView.delegate = self;
     self.infoTextView.dataSource = self;
     self.infoTextView.estimatedRowHeight = 80;
+    self.infoTextView.backgroundColor = [UIColor clearColor];
     self.infoTextView.rowHeight = UITableViewAutomaticDimension;
-    
+    self.infoTextView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.infoTextView];
     [self.infoTextView registerClass:[UREFLAudioDialogueTableViewCell class] forCellReuseIdentifier:@"AudioDialogueIndentifer"];
     [self.infoTextView registerClass:[UREFLAudioDialoguePeerTableViewCell class] forCellReuseIdentifier:@"AudioDialoguePeerIndentifer"];
