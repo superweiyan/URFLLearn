@@ -12,12 +12,14 @@
 #define portraitNormal  40
 #define portraitBig     80
 
-#define viewLeading     10
-#define viewTop         10
-#define viewBottom      10
+#define viewLeading     5
+#define viewTop         5
+#define viewBottom      5
 
 #define viewMarginLeading   5
 #define viewMarginTop       5
 #define viewMarginBottom    5
 
 #define viewSpace           10
+
+#define containSpace        10

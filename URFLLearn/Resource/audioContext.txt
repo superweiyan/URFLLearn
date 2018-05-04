@@ -1,11 +1,16 @@
 {
-"dialogue": [
+"dialogue":
+[
 "How are you feeling, John?",
 "Oh, not too bad, but I've got to stay in bed.",
 "Do more exercises after you are healthy.",
 "Ok, I will. You have said that many times.",
 "Are you hungry? Do you want me to buy something for you to eat?",
 "No, there's no need. Thank you all the same."
-
-]
+],
+"notes":{
+"word":"all the same",
+"chinese":"尽管如此，仍然",
+"example":["\"All the same, I wish he'd come back,\" Martha said sombrely.\n玛莎忧郁地说：\"不管怎样，我希望他会回来。\""]
+}
 }

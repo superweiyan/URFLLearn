@@ -15,8 +15,11 @@
 
 @interface EFLAudioModel : NSObject
 
-@property (nonatomic, strong) NSString *content;
-@property (nonatomic, assign) BOOL      isOther;
-@property (nonatomic, assign) float     height;
+@property (nonatomic, strong) NSArray       *contentItemArray;
+@property (nonatomic, strong) NSString      *keyWord;
+@property (nonatomic, strong) NSString      *chineseWord;
+@property (nonatomic, strong) NSArray       *exampleSentences;
+
+//@property (nonatomic, assign) float     height;
 
 @end

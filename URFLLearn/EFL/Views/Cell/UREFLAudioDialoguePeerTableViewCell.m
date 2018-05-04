@@ -86,10 +86,10 @@
     return self;
 }
 
-- (void)setAudioModel:(EFLAudioModel *)audioModel
+- (void)setAudioContent:(NSString *)audioContent
 {
-    _audioModel = audioModel;
-    self.textView.text = audioModel.content;
+    _audioContent = audioContent;
+    self.textView.text = audioContent;
 }
 
 @end

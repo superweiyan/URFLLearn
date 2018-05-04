@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class EFLAudioModel;
-
 @interface UREFLAudioDialoguePeerTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) EFLAudioModel *audioModel;
+@property (nonatomic, strong) NSString *audioContent;
 
 @end

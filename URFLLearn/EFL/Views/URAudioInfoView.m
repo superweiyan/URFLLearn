@@ -40,6 +40,9 @@
 {
     self = [super init];
     if (self) {
+        
+        self.backgroundColor = [UIColor whiteColor];
+        
         [self initData];
         [self initViews];
         [self initNotification];
