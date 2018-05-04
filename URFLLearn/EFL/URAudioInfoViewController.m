@@ -16,13 +16,14 @@
 #import "EFLTypes.h"
 #import "UREFLAudioDialoguePeerTableViewCell.h"
 #import "URLayoutConfig.h"
+#import "URCommonMarco.h"
+#import "URAudioNoteView.h"
 
 @interface URAudioInfoViewController()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) URAudioInfoView   *infoView;
 @property (nonatomic, strong) UITableView       *infoTextView;
-//@property (nonatomic, strong) NSArray           *dailogueItemArray;
-@property (nonatomic, strong) UIView            *noteViews;
+@property (nonatomic, strong) URAudioNoteView   *noteViews;
 @property (nonatomic, strong) EFLAudioModel     *audioModel;
 
 @end
@@ -51,7 +52,6 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
 //    if ([self.infoTextView respondsToSelector:@selector(setSeparatorInset:)]) {
 //        [self.infoTextView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
 //    }
@@ -96,6 +96,8 @@
     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSDictionary *dict = [str convertJson];
     self.audioModel = [self getDialogue:dict];
+    
+    self.noteViews.audioModel = self.audioModel;
 }
 
 - (void)initViews
@@ -110,15 +112,7 @@
         make.bottom.mas_equalTo(self.view).mas_offset(-10);
     }];
     
-    self.noteViews = [self createNoteView];
-    [self.view insertSubview:self.noteViews belowSubview:self.infoView];
-    
-    [self.noteViews mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.infoView.mas_top).mas_offset(-containSpace);
-        make.leading.mas_equalTo(self.view);
-        make.trailing.mas_equalTo(self.view);
-        make.height.mas_equalTo(30);
-    }];
+    [self createNoteView];
 
     self.infoTextView = [[UITableView alloc] init];
     self.infoTextView.delegate = self;
@@ -141,57 +135,25 @@
 
 #pragma mark
 
-- (UIView *)createNoteView
+- (void)createNoteView
 {
-    UIView *noteView = [[UIView alloc] init];
-    noteView.clipsToBounds = YES;
-    noteView.backgroundColor = [UIColor redColor];
+    self.noteViews = [[URAudioNoteView alloc] init];
+    WeakSelf
+    self.noteViews.audioNoteCallbaak = ^{
+        [weakSelf onSwitchViewClicked];
+    };
     
-    UIButton *closeBtn = [[UIButton alloc] init];
-    [closeBtn addTarget:self action:@selector(onSwitchViewClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [closeBtn setTitle:@"收起" forState:UIControlStateNormal];
-    closeBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-    [closeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [noteView addSubview:closeBtn];
+    [self.view insertSubview:self.noteViews belowSubview:self.infoView];
     
-    [closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(noteView).mas_offset(viewTop);
-        make.trailing.mas_equalTo(noteView).mas_offset(-viewLeading);
-        make.size.mas_equalTo(CGSizeMake(50, 20));
+    [self.noteViews mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.infoView.mas_top).mas_offset(-containSpace);
+        make.leading.mas_equalTo(self.view);
+        make.trailing.mas_equalTo(self.view);
+        make.height.mas_equalTo(30);
     }];
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.text = @"关键词组";
-    label.font = [UIFont systemFontOfSize:12];
-    [noteView addSubview:label];
-
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(noteView).mas_offset(viewLeading);
-        make.top.mas_equalTo(noteView).mas_offset(viewTop);
-        make.height.mas_equalTo(20);
-        make.trailing.mas_equalTo(closeBtn.mas_leading).mas_offset(-viewSpace);
-    }];
-    
-    [label setMas_key:@"keyword"];
-    
-    UITextView *textView = [[UITextView alloc] init];
-    textView.editable = NO;
-    [noteView addSubview:textView];
-    
-    [textView setMas_key:@"text"];
-    
-    [textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(noteView).mas_offset(viewLeading);
-        make.top.mas_equalTo(label.mas_bottom).mas_offset(viewTop);
-        make.trailing.mas_equalTo(noteView).mas_offset(-viewLeading);
-        make.height.mas_equalTo(65);
-//        make.bottom.mas_equalTo(noteView);
-    }];
-    
-    return noteView;
 }
 
-- (void)onSwitchViewClicked:(id)sender
+- (void)onSwitchViewClicked
 {
     CGFloat height = 0;
     if(self.noteViews.frame.size.height == 30) {
@@ -230,18 +192,22 @@
     CGFloat noteHeight = rect.size.height + height;
     CGFloat textViewHeight = textViewRect.size.height - height;
     
+    WeakSelf
     [UIView animateWithDuration:1 animations:^{
-        self.infoTextView.frame = CGRectMake(textViewRect.origin.x, textViewRect.origin.y, textViewRect.size.width, textViewHeight);
-        self.noteViews.frame = CGRectMake(rect.origin.x, rect.origin.y - height, rect.size.width, noteHeight);
-        [self.view layoutIfNeeded];
+        weakSelf.infoTextView.frame = CGRectMake(textViewRect.origin.x,
+                                                 textViewRect.origin.y,
+                                                 textViewRect.size.width,
+                                                 textViewHeight);
+        
+        weakSelf.noteViews.frame = CGRectMake(rect.origin.x,
+                                              rect.origin.y - height,
+                                              rect.size.width,
+                                              noteHeight);
+        [weakSelf.view layoutIfNeeded];
     } completion:^(BOOL finished) {
-        [self.noteViews mas_updateConstraints:^(MASConstraintMaker *make) {
+        [weakSelf.noteViews mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(noteHeight);
         }];
-        
-//        [self.infoTextView mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.bottom.mas_equalTo(textViewHeight);
-//        }];
     }];
 }
 

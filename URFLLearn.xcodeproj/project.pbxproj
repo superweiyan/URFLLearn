@@ -31,6 +31,8 @@
 		6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0060209B232400870514 /* UIColor+Hex.m */; };
 		6ECB0064209B232400870514 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0062209B232400870514 /* NSString+Utils.m */; };
 		6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0067209B244F00870514 /* URFLNetUtils.m */; };
+		6ECB0078209C7BB400870514 /* URCommonMarco.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0077209C7BB400870514 /* URCommonMarco.m */; };
+		6ECB007B209C7D0600870514 /* URAudioNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB007A209C7D0600870514 /* URAudioNoteView.m */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,10 @@
 		6ECB0062209B232400870514 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		6ECB0066209B244F00870514 /* URFLNetUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URFLNetUtils.h; sourceTree = "<group>"; };
 		6ECB0067209B244F00870514 /* URFLNetUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URFLNetUtils.m; sourceTree = "<group>"; };
+		6ECB0076209C7BB400870514 /* URCommonMarco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URCommonMarco.h; sourceTree = "<group>"; };
+		6ECB0077209C7BB400870514 /* URCommonMarco.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URCommonMarco.m; sourceTree = "<group>"; };
+		6ECB0079209C7D0600870514 /* URAudioNoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URAudioNoteView.h; sourceTree = "<group>"; };
+		6ECB007A209C7D0600870514 /* URAudioNoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URAudioNoteView.m; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +169,7 @@
 		6E61772B20995F25009A5D02 /* URFLLearn */ = {
 			isa = PBXGroup;
 			children = (
+				6ECB0075209C7B3300870514 /* Macro */,
 				6ECB005D209B22D200870514 /* Support */,
 				6E6177762099B924009A5D02 /* Resource */,
 				6E6177702099A09B009A5D02 /* Utils */,
@@ -221,6 +228,8 @@
 				6ECB0048209AE8AC00870514 /* Cell */,
 				6E61776920999DE9009A5D02 /* URAudioInfoView.h */,
 				6E61776A20999DE9009A5D02 /* URAudioInfoView.m */,
+				6ECB0079209C7D0600870514 /* URAudioNoteView.h */,
+				6ECB007A209C7D0600870514 /* URAudioNoteView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +317,15 @@
 				6ECB0067209B244F00870514 /* URFLNetUtils.m */,
 			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		6ECB0075209C7B3300870514 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				6ECB0076209C7BB400870514 /* URCommonMarco.h */,
+				6ECB0077209C7BB400870514 /* URCommonMarco.m */,
+			);
+			path = Macro;
 			sourceTree = "<group>";
 		};
 		FD9B45E96F827841DC402356 /* Frameworks */ = {
@@ -508,6 +526,8 @@
 				6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */,
 				6ECB0056209AE90200870514 /* EFLModule.m in Sources */,
 				6ECB005C209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
+				6ECB007B209C7D0600870514 /* URAudioNoteView.m in Sources */,
+				6ECB0078209C7BB400870514 /* URCommonMarco.m in Sources */,
 				6ECB0053209AE8F200870514 /* EFLCore.m in Sources */,
 				6ECB0064209B232400870514 /* NSString+Utils.m in Sources */,
 				6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */,
