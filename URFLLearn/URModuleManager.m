@@ -10,4 +10,15 @@
 
 @implementation URModuleManager
 
++ (instancetype)sharedObject
+{
+    static dispatch_once_t __once;              \
+    static URModuleManager * __instance = nil;         \
+    dispatch_once(&__once, ^{                   \
+        __instance = [[URModuleManager alloc] init];   \
+    });                                         \
+    return __instance;
+//    http://makefriends.bs2dl.yy.com/EFL01.zip
+}
+
 @end

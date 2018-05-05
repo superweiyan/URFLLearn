@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class EFLModule;
+
 @interface URModuleManager : NSObject
+
++ (instancetype)sharedObject;
 
 @end
