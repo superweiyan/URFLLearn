@@ -12,5 +12,9 @@
 
 @end
 
+@implementation EFLAudioExampleModel
+
+@end
+
 @implementation EFLAudioModel
 @end

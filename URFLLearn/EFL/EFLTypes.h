@@ -12,6 +12,12 @@
 
 @end
 
+@interface EFLAudioExampleModel : NSObject
+
+@property (nonatomic, strong) NSString *englist;    //英文例子
+@property (nonatomic, strong) NSString *chinese;    //中文翻译
+
+@end
 
 @interface EFLAudioModel : NSObject
 

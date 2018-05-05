@@ -85,14 +85,16 @@
     _audioModel = audioModel;
     
     NSMutableString *txt = [[NSMutableString alloc] init];
-    [txt appendString:_audioModel.keyWord];
+    [txt appendString:[self checkString:_audioModel.keyWord]];
     [txt appendString:@"\n"];
-    [txt appendString:_audioModel.chineseWord];
+    [txt appendString:[self checkString:_audioModel.chineseWord]];
     [txt appendString:@"\n"];
     
     for (int i = 0; i < _audioModel.exampleSentences.count; i++) {
-        NSString *example = [_audioModel.exampleSentences objectAtIndex:i];
-        [txt appendString:example];
+        EFLAudioExampleModel *example = [_audioModel.exampleSentences objectAtIndex:i];
+        [txt appendString:[self checkString:example.englist]];
+        [txt appendString:@"\n"];
+        [txt appendString:[self checkString:example.chinese]];
     }
     self.textView.text = txt;
 }
@@ -102,6 +104,14 @@
     if (self.audioNoteCallbaak) {
         self.audioNoteCallbaak();
     }
+}
+
+- (NSString *)checkString:(NSString *)txt
+{
+    if (txt.length == 0) {
+        return @"";
+    }
+    return txt;
 }
 
 @end

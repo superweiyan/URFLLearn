@@ -221,8 +221,21 @@
     model.contentItemArray = [dict objectForKey:@"dialogue"];
     model.keyWord = [notes objectForKey:@"word"];
     model.chineseWord = [notes objectForKey:@"chinese"];
-    model.exampleSentences = [notes objectForKey:@"example"];
     
+    NSArray *sentences = [notes objectForKey:@"example"];
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < sentences.count; i++) {
+        NSDictionary *dict = [sentences objectAtIndex:i];
+        if ([dict isKindOfClass:[NSDictionary class]]) {
+            EFLAudioExampleModel *example = [[EFLAudioExampleModel alloc] init];
+            example.englist = [dict objectForKey:@"key"];
+            example.chinese = [dict objectForKey:@"value"];
+
+            [array addObject:example];
+        }
+    }
+    model.exampleSentences = array;
     return model;
 }
 
