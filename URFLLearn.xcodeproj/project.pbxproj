@@ -33,6 +33,8 @@
 		6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0067209B244F00870514 /* URFLNetUtils.m */; };
 		6ECB0078209C7BB400870514 /* URCommonMarco.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0077209C7BB400870514 /* URCommonMarco.m */; };
 		6ECB007B209C7D0600870514 /* URAudioNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB007A209C7D0600870514 /* URAudioNoteView.m */; };
+		6ECB0081209D5DE200870514 /* URModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0080209D5DE200870514 /* URModuleManager.m */; };
+		6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0083209D5E1500870514 /* URPathConfig.m */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,10 @@
 		6ECB0077209C7BB400870514 /* URCommonMarco.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URCommonMarco.m; sourceTree = "<group>"; };
 		6ECB0079209C7D0600870514 /* URAudioNoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URAudioNoteView.h; sourceTree = "<group>"; };
 		6ECB007A209C7D0600870514 /* URAudioNoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URAudioNoteView.m; sourceTree = "<group>"; };
+		6ECB007F209D5DE200870514 /* URModuleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URModuleManager.h; sourceTree = "<group>"; };
+		6ECB0080209D5DE200870514 /* URModuleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URModuleManager.m; sourceTree = "<group>"; };
+		6ECB0082209D5E1500870514 /* URPathConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URPathConfig.h; sourceTree = "<group>"; };
+		6ECB0083209D5E1500870514 /* URPathConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URPathConfig.m; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +190,8 @@
 				6E61773720995F27009A5D02 /* LaunchScreen.storyboard */,
 				6E61773A20995F27009A5D02 /* Info.plist */,
 				6E61773B20995F27009A5D02 /* main.m */,
+				6ECB007F209D5DE200870514 /* URModuleManager.h */,
+				6ECB0080209D5DE200870514 /* URModuleManager.m */,
 			);
 			path = URFLLearn;
 			sourceTree = "<group>";
@@ -241,6 +249,8 @@
 				6E61776E20999FF7009A5D02 /* URColorConfig.m */,
 				6ECB0057209AFAA500870514 /* URLayoutConfig.h */,
 				6ECB0058209AFAA500870514 /* URLayoutConfig.m */,
+				6ECB0082209D5E1500870514 /* URPathConfig.h */,
+				6ECB0083209D5E1500870514 /* URPathConfig.m */,
 			);
 			path = CommonConfig;
 			sourceTree = "<group>";
@@ -526,6 +536,7 @@
 				6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */,
 				6ECB0056209AE90200870514 /* EFLModule.m in Sources */,
 				6ECB005C209B112000870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
+				6ECB0081209D5DE200870514 /* URModuleManager.m in Sources */,
 				6ECB007B209C7D0600870514 /* URAudioNoteView.m in Sources */,
 				6ECB0078209C7BB400870514 /* URCommonMarco.m in Sources */,
 				6ECB0053209AE8F200870514 /* EFLCore.m in Sources */,
@@ -534,6 +545,7 @@
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
 				6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */,
 				6E6177642099984E009A5D02 /* URAudioLearnViewController.m in Sources */,
+				6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
 				6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */,
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
