@@ -70,7 +70,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     URAudioInfoViewController *controller = [[URAudioInfoViewController alloc] init];
+    controller.lessionId = @"EFL02";
+    controller.audioModelArray = [self getLessionArray:@"EFL02"];
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+- (NSArray *)getLessionArray:(NSString *)lessionId
+{
+    return @[@"391", @"392", @"393", @"394", @"395"];
+}
+
 @end
 

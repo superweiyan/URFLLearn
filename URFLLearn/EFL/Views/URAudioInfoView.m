@@ -23,6 +23,7 @@
 @property (nonatomic, assign) BOOL          isInfPlay;
 @property (nonatomic, strong) UISlider      *sider;
 @property (nonatomic, assign) CGFloat       currentVolumeValue;
+@property (nonatomic, assign) BOOL          isPause;
 
 @end
 
@@ -57,9 +58,8 @@
 
 - (void)playAudio:(NSString *)path
 {
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"2272395.MP3" ofType:nil];
-    if (audioPath.length > 0) {
-        self.playItem = [AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:audioPath]];
+    if (path.length > 0) {
+        self.playItem = [AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:path]];
     }
     else {
         self.playItem = nil;
@@ -101,9 +101,18 @@
 
 - (void)onPlayClicked:(id)sender
 {
-    [self addAudioObserver];
-    [self.player replaceCurrentItemWithPlayerItem:self.playItem];
-    [self.player play];
+    if(self.player.rate == 1) {
+        [self.player pause];
+        self.isPause = YES;
+    }
+    else {
+        
+        if (!self.isPause) {
+            [self addAudioObserver];
+            [self.player replaceCurrentItemWithPlayerItem:self.playItem];
+        }
+        [self.player play];
+    }
 }
 
 - (void)onInfPlayClicked:(id)sender
@@ -127,8 +136,9 @@
 // 播放结束的时候，会调用这个通知
 - (void)onPlayFinishNotification:(NSNotification *)notification
 {
+    self.isPause = NO;
+    [self.player seekToTime:kCMTimeZero];
     if (self.isInfPlay) {
-        [self.player seekToTime:kCMTimeZero];
         [self.player play];
     }
     else {
@@ -145,6 +155,7 @@
 {
     [self.player removeObserver:self forKeyPath:@"status"];
 }
+
 #pragma mark - init
 
 - (AVPlayer *)player

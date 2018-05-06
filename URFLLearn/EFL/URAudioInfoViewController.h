@@ -10,4 +10,7 @@
 
 @interface URAudioInfoViewController : UIViewController
 
+@property (nonatomic, strong) NSString            *lessionId;
+@property (nonatomic, strong) NSArray<NSString *> *audioModelArray;
+
 @end

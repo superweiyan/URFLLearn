@@ -18,7 +18,7 @@
     self = [super init];
     if (self) {
         
-        if (![self checkAudioLession:@"EFL01"]) {
+        if (![self checkAudioLession:@"EFL02"]) {
             [self downloadAudioLession];
         }
     }
@@ -29,7 +29,7 @@
 
 - (void)downloadAudioLession
 {
-    [URFLNetUtils download:@"http://makefriends.bs2dl.yy.com/EFL01.zip"
+    [URFLNetUtils download:@"http://makefriends.bs2dl.yy.com/EFL02.zip"
                       path:[URPathConfig getcheckDownloadCachePath]
                   callback:^(NSString *filePath) {
         

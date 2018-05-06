@@ -18,6 +18,7 @@
 #import "URLayoutConfig.h"
 #import "URCommonMarco.h"
 #import "URAudioNoteView.h"
+#import "URPathConfig.h"
 
 @interface URAudioInfoViewController()<UITableViewDelegate, UITableViewDataSource>
 
@@ -91,13 +92,29 @@
 
 - (void)initData
 {
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"audioContext.txt" ofType:nil];
-    NSData *data = [NSData dataWithContentsOfFile:audioPath options:0 error:nil];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSDictionary *dict = [str convertJson];
+//    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"audioContext.txt" ofType:nil];
+//    NSData *data = [NSData dataWithContentsOfFile:audioPath options:0 error:nil];
+//    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSDictionary *dict = [str convertJson];
+//    self.audioModel = [self getDialogue:dict];
+    
+    NSString *key = self.audioModelArray.firstObject;
+    [self switchAudioModel:key];
+}
+
+- (void)switchAudioModel:(NSString *)key
+{
+    NSString *path = [NSString stringWithFormat:@"%@/%@/%@.txt", [URPathConfig getEFLAudioLession], self.lessionId, key];
+    NSString *audioPath = [NSString stringWithFormat:@"%@/%@/%@.MP3", [URPathConfig getEFLAudioLession], self.lessionId, key];
+    
+    NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+//    NSData *data = [NSData dataWithContentsOfFile:path options:0 error:nil];
+//    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [content convertJson];
     self.audioModel = [self getDialogue:dict];
     
     self.noteViews.audioModel = self.audioModel;
+    [self.infoView playAudio:audioPath];
 }
 
 - (void)initViews
