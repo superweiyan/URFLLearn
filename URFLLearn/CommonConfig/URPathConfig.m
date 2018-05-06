@@ -19,7 +19,7 @@
 + (void)checkDownloadCachePath
 {
     NSString *downloadCachePath = [self getCacheDirectory];
-    downloadCachePath = [downloadCachePath stringByAppendingPathComponent:@"download"];
+    downloadCachePath = [downloadCachePath stringByAppendingPathComponent:URDownloadName];
     if(![[NSFileManager defaultManager] fileExistsAtPath:downloadCachePath]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:downloadCachePath
                                   withIntermediateDirectories:YES attributes:nil error:nil];
@@ -29,11 +29,30 @@
 + (void)checkELFLession
 {
     NSString *downloadCachePath = [self getCacheDirectory];
-    downloadCachePath = [downloadCachePath stringByAppendingPathComponent:@"ELF"];
+    downloadCachePath = [downloadCachePath stringByAppendingPathComponent:@"ELF/AudioLession"];
     if(![[NSFileManager defaultManager] fileExistsAtPath:downloadCachePath]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:downloadCachePath
                                   withIntermediateDirectories:YES attributes:nil error:nil];
     }
+}
+
++ (NSString *)getEFLAudioLession
+{
+    NSString *downloadCachePath = [self getCacheDirectory];
+    return [downloadCachePath stringByAppendingPathComponent:@"ELF/AudioLession"];
+}
+
++ (NSString *)getEFL
+{
+    NSString *downloadCachePath = [self getCacheDirectory];
+    return [downloadCachePath stringByAppendingPathComponent:@"ELF"];
+
+}
+
++ (NSString *)getcheckDownloadCachePath
+{
+    NSString *downloadCachePath = [self getCacheDirectory];
+    return [downloadCachePath stringByAppendingPathComponent:URDownloadName];
 }
 
 + (NSString *)getHomeDirectory

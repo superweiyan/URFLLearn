@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "URPathConfig.h"
+#import "URModuleManager.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,7 @@
     // Override point for customization after application launch.
     
     [URPathConfig initDefaultDir];
+    [URModuleManager sharedObject];
     
     return YES;
 }

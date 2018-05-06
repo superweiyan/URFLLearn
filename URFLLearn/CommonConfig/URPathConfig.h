@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define URDownloadName @"download"
+
 @interface URPathConfig : NSObject
 
 + (void)initDefaultDir;
@@ -26,4 +28,11 @@
 
 // 获取tmp目录路径
 + (NSString *)getTmpDirectory;
+
+//
+//EFL
++ (NSString *)getcheckDownloadCachePath;
++ (NSString *)getEFLAudioLession;
++ (NSString *)getEFL;
+
 @end

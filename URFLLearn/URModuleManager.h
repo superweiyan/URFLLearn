@@ -12,6 +12,8 @@
 
 @interface URModuleManager : NSObject
 
+@property (nonatomic, strong) EFLModule     *eFLModule;
+
 + (instancetype)sharedObject;
 
 @end

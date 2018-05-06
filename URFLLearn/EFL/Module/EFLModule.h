@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^unzipCallback)(BOOL, NSError*);
+
 @interface EFLModule : NSObject
 
 @end

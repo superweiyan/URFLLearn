@@ -7,6 +7,7 @@
 //
 
 #import "URModuleManager.h"
+#import "EFLModule.h"
 
 @implementation URModuleManager
 
@@ -21,4 +22,13 @@
 //    http://makefriends.bs2dl.yy.com/EFL01.zip
 }
 
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.eFLModule = [[EFLModule alloc] init];
+    }
+    return self;
+}
 @end

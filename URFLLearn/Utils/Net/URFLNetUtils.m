@@ -29,14 +29,16 @@
 
 + (void)download:(NSString *)url path:(NSString *)path callback:(webDownloadCallback)callback
 {
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    AFURLSessionManager *manager = [AFHTTPSessionManager manager];
+    //[[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSURL *downloadUrl = [NSURL URLWithString:url];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:downloadUrl];
     
-    [manager downloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
-        //下载进度         CGFloat progress = downloadProgress.completedUnitCount / downloadProgress.totalUnitCount;
-//        NSLog(@"%f",1.0 * progress);
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
+//        下载进度
+        CGFloat progress = downloadProgress.completedUnitCount / downloadProgress.totalUnitCount;
+        NSLog(@"%f",1.0 * progress);
         
         //一定要使用"setProgressWithDownloadProgressOfTask"方法设置进度,不然进度条无法刷新
 //        [progressView setProgressWithDownloadProgressOfTask:_downloadTask animated:true];
@@ -50,7 +52,13 @@
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
 //        下载完成后打印路径
         NSLog(@"%@",filePath);
+        
+        if (callback) {
+            callback(filePath.relativePath);
+        }
     }];
+    
+    [downloadTask resume];
 
 }
 
