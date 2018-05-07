@@ -176,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				6ECB0075209C7B3300870514 /* Macro */,
-				6ECB005D209B22D200870514 /* Support */,
 				6E6177762099B924009A5D02 /* Resource */,
 				6E6177702099A09B009A5D02 /* Utils */,
 				6E61776C20999FDD009A5D02 /* CommonConfig */,
@@ -300,13 +299,6 @@
 				6ECB0055209AE90200870514 /* EFLModule.m */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		6ECB005D209B22D200870514 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		6ECB005E209B232400870514 /* Category */ = {
