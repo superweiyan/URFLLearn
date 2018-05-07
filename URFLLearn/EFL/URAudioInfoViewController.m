@@ -26,6 +26,9 @@
 @property (nonatomic, strong) UITableView       *infoTextView;
 @property (nonatomic, strong) URAudioNoteView   *noteViews;
 @property (nonatomic, strong) EFLAudioModel     *audioModel;
+@property (nonatomic, strong) UIButton          *prevBtn;
+@property (nonatomic, strong) UIButton          *nextBtn;
+@property (nonatomic, assign) NSInteger         currentIndex;
 
 @end
 
@@ -88,17 +91,34 @@
     return [UITableViewCell new];
 }
 
+#pragma mark - action
+
+- (void)onNextBtnClicked:(id)sender
+{
+    if(self.currentIndex == self.audioModelArray.count - 1) {
+        return ;
+    }
+    self.currentIndex += 1;
+    NSString *key = [self.audioModelArray objectAtIndex:self.currentIndex];
+    [self switchAudioModel:key];
+}
+
+- (void)onPrevBtnClicked:(id)sender
+{
+    if(self.currentIndex == 0) {
+        return ;
+    }
+    self.currentIndex -= 1;
+    NSString *key = [self.audioModelArray objectAtIndex:self.currentIndex];
+    [self switchAudioModel:key];
+}
+
 #pragma mark - init
 
 - (void)initData
 {
-//    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"audioContext.txt" ofType:nil];
-//    NSData *data = [NSData dataWithContentsOfFile:audioPath options:0 error:nil];
-//    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//    NSDictionary *dict = [str convertJson];
-//    self.audioModel = [self getDialogue:dict];
-    
-    NSString *key = self.audioModelArray.firstObject;
+    self.currentIndex = 0;
+    NSString *key = [self.audioModelArray objectAtIndex:self.currentIndex];
     [self switchAudioModel:key];
 }
 
@@ -115,6 +135,7 @@
     
     self.noteViews.audioModel = self.audioModel;
     [self.infoView playAudio:audioPath];
+    [self.infoTextView reloadData];
 }
 
 - (void)initViews
@@ -148,9 +169,31 @@
 //        make.bottom.mas_equalTo(self.view).mas_offset(-containSpace * 3 - 30 - 40);
         make.bottom.mas_equalTo(self.noteViews.mas_top).mas_offset(-viewSpace);
     }];
+    
+    self.prevBtn = [[UIButton alloc] init];
+    self.prevBtn.backgroundColor = [UIColor blueColor];
+    [self.prevBtn addTarget:self action:@selector(onPrevBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.prevBtn];
+    
+    [self.prevBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self.view).mas_offset(containSpace);
+        make.centerY.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+    }];
+    
+    self.nextBtn = [[UIButton alloc] init];
+    self.nextBtn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.nextBtn];
+    [self.nextBtn addTarget:self action:@selector(onNextBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(self.view).mas_offset(-containSpace);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.centerY.mas_equalTo(self.view);
+    }];
 }
 
-#pragma mark
+#pragma mark - note
 
 - (void)createNoteView
 {
