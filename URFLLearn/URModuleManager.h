@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class EFLModule;
+@class URUniqueManager;
 
 @interface URModuleManager : NSObject
 
-@property (nonatomic, strong) EFLModule     *eFLModule;
+@property (nonatomic, strong) EFLModule                 *eFLModule;
+@property (nonatomic, strong) URUniqueManager           *uniqueManager;
 
 + (instancetype)sharedObject;
 

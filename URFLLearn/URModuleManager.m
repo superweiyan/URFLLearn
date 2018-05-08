@@ -8,6 +8,7 @@
 
 #import "URModuleManager.h"
 #import "EFLModule.h"
+#import "URUniqueManager.h"
 
 @implementation URModuleManager
 
@@ -28,6 +29,7 @@
     self = [super init];
     if (self) {
         self.eFLModule = [[EFLModule alloc] init];
+        self.uniqueManager = [[URUniqueManager alloc] init];
     }
     return self;
 }
