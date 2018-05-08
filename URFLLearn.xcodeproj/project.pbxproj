@@ -20,8 +20,6 @@
 		6E61776B20999DE9009A5D02 /* URAudioInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776A20999DE9009A5D02 /* URAudioInfoView.m */; };
 		6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776E20999FF7009A5D02 /* URColorConfig.m */; };
 		6E6177752099AA64009A5D02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6177742099AA64009A5D02 /* AVFoundation.framework */; };
-		6E61777A2099B9CD009A5D02 /* audioContext.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E6177782099B9CD009A5D02 /* audioContext.txt */; };
-		6E61777C2099C10D009A5D02 /* 2272395.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = 6E61777B2099C10D009A5D02 /* 2272395.MP3 */; };
 		6ECB004B209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */; };
 		6ECB0050209AE8E100870514 /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB004F209AE8E100870514 /* EFLTypes.m */; };
 		6ECB0053209AE8F200870514 /* EFLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0052209AE8F200870514 /* EFLCore.m */; };
@@ -85,8 +83,6 @@
 		6E61776D20999FF7009A5D02 /* URColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URColorConfig.h; sourceTree = "<group>"; };
 		6E61776E20999FF7009A5D02 /* URColorConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URColorConfig.m; sourceTree = "<group>"; };
 		6E6177742099AA64009A5D02 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		6E6177782099B9CD009A5D02 /* audioContext.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = audioContext.txt; sourceTree = "<group>"; };
-		6E61777B2099C10D009A5D02 /* 2272395.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2272395.MP3; sourceTree = "<group>"; };
 		6ECB0049209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UREFLAudioDialogueTableViewCell.m; sourceTree = "<group>"; };
 		6ECB004A209AE8AC00870514 /* UREFLAudioDialogueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UREFLAudioDialogueTableViewCell.h; sourceTree = "<group>"; };
 		6ECB004E209AE8E100870514 /* EFLTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLTypes.h; sourceTree = "<group>"; };
@@ -275,8 +271,6 @@
 		6E6177762099B924009A5D02 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				6E61777B2099C10D009A5D02 /* 2272395.MP3 */,
-				6E6177782099B9CD009A5D02 /* audioContext.txt */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -469,11 +463,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E61777A2099B9CD009A5D02 /* audioContext.txt in Resources */,
 				6E61773920995F27009A5D02 /* LaunchScreen.storyboard in Resources */,
 				6E61773620995F27009A5D02 /* Assets.xcassets in Resources */,
 				6E61773420995F25009A5D02 /* Main.storyboard in Resources */,
-				6E61777C2099C10D009A5D02 /* 2272395.MP3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
