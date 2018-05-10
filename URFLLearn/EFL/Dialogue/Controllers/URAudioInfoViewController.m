@@ -128,8 +128,6 @@
     NSString *audioPath = [NSString stringWithFormat:@"%@/%@/%@.MP3", [URPathConfig getEFLAudioLession], self.lessionId, key];
     
     NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-//    NSData *data = [NSData dataWithContentsOfFile:path options:0 error:nil];
-//    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSDictionary *dict = [content convertJson];
     self.audioModel = [self getDialogue:dict];
     

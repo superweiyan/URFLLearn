@@ -49,6 +49,11 @@
 
 }
 
++ (NSString *)loadNSBundleResurce:(NSString *)name
+{
+    return [[NSBundle mainBundle] pathForResource:name ofType:nil];
+}
+
 + (NSString *)getcheckDownloadCachePath
 {
     NSString *downloadCachePath = [self getCacheDirectory];

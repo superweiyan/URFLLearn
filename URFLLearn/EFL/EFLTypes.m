@@ -18,3 +18,6 @@
 
 @implementation EFLAudioModel
 @end
+
+@implementation EFLLessionInfoModel
+@end

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Masonry.h"
-#import "URAudioLearnViewController.h"
+#import "UREFLViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -68,7 +68,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    URAudioLearnViewController *controller = [[URAudioLearnViewController alloc] init];
+    UREFLViewController *controller = [[UREFLViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

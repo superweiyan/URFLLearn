@@ -35,4 +35,8 @@
 + (NSString *)getEFLAudioLession;
 + (NSString *)getEFL;
 
+//load resource
+
++ (NSString *)loadNSBundleResurce:(NSString *)name;
+
 @end

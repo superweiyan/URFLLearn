@@ -26,6 +26,12 @@
 @property (nonatomic, strong) NSString      *chineseWord;
 @property (nonatomic, strong) NSArray       *exampleSentences;
 
-//@property (nonatomic, assign) float     height;
+@end
+
+@interface EFLLessionInfoModel : NSObject
+
+@property (nonatomic, strong) NSString * lessionName;
+@property (nonatomic, strong) NSString * logo;
+@property (nonatomic, strong) NSString * note;
 
 @end
