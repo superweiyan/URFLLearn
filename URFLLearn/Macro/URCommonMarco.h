@@ -9,3 +9,13 @@
 #import <Foundation/Foundation.h>
 
 #define WeakSelf __weak __typeof(self) weakSelf = self;
+
+
+#define jumpViewController(name)    id cls = [[NSClassFromString(name) alloc] init]; \
+                                    if ([cls isKindOfClass:[UIViewController class]]) { \
+                                        [self.navigationController pushViewController:cls animated:YES]; \
+                                    } \
+                                    else { \
+NSLog(@"jumpViewController fail"); \
+                                    }
+

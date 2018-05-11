@@ -12,6 +12,7 @@
 #import "Masonry.h"
 #import "EFLTypes.h"
 #import "URLayoutConfig.h"
+#import "URCommonMarco.h"
 
 @interface UREFLViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -53,8 +54,20 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    if (indexPath.row < self.infoModel.count) {
+        
+        EFLLessionInfoModel *model = [self.infoModel objectAtIndex:indexPath.row];
+        if ([model.lessionId isEqualToString:@"simpleDialoug"]) {
+            jumpViewController(@"URAudioLearnViewController");
+        }
+        else if ([model.lessionId isEqualToString:@"BBCSpecial"]) {
+            
+        }
+    }
 }
+
+
+
 
 #pragma mark - init
 
@@ -65,18 +78,19 @@
     introductImage.image = [UIImage imageWithContentsOfFile:[URPathConfig loadNSBundleResurce:@"introduct_logo.jpg"]];
     [introductImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(10);
-        make.top.mas_equalTo(100);
-        make.size.mas_equalTo(CGSizeMake(portraitBig, portraitBig));
+        make.top.mas_equalTo(150);
+        make.size.mas_equalTo(CGSizeMake(120, 120));
     }];
     
     UILabel *label =  [[UILabel alloc] init];
     [self.view addSubview:label];
-    label.text = @"hi，同学，选择课程开始吧！";
+    label.numberOfLines = 0;
+    label.text = @"hi，选择课程开始吧~ \n go!";
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(introductImage.mas_trailing).mas_offset(containSpace);
         make.top.mas_equalTo(introductImage.mas_top).mas_offset(50);
         make.trailing.mas_equalTo(self.view).mas_offset(-containSpace);
-        make.height.mas_equalTo(15);
+        make.height.mas_equalTo(20);
     }];
 }
 
@@ -86,7 +100,6 @@
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 80, 220);
     layout.minimumLineSpacing = 20;
-//    layout.minimumInteritemSpacing = 15;
     layout.sectionInset = UIEdgeInsetsMake(15, 40, 15, 40);
     
     self.lessionCardCollectView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
@@ -128,6 +141,7 @@
         model.lessionName = [info objectForKey:@"name"];
         model.logo = [info objectForKey:@"logo"];
         model.note = [info objectForKey:@"description"];
+        model.lessionId = [info objectForKey:@"lessionId"];
         
         [itemArray addObject:model];
     }

@@ -30,6 +30,7 @@
 
 @interface EFLLessionInfoModel : NSObject
 
+@property (nonatomic, strong) NSString * lessionId;
 @property (nonatomic, strong) NSString * lessionName;
 @property (nonatomic, strong) NSString * logo;
 @property (nonatomic, strong) NSString * note;
