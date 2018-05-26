@@ -35,6 +35,7 @@
     if (self) {
         
         self.clipsToBounds = YES;
+        self.backgroundColor = [UIColor whiteColor];
         
         self.closeBtn = [[UIButton alloc] init];
         [self.closeBtn addTarget:self action:@selector(onSwitchViewClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -73,7 +74,7 @@
             make.leading.mas_equalTo(self).mas_offset(viewLeading);
             make.top.mas_equalTo(label.mas_bottom).mas_offset(viewTop);
             make.trailing.mas_equalTo(self).mas_offset(-viewLeading);
-            make.height.mas_equalTo(65);
+            make.bottom.mas_equalTo(self);
         }];
     }
     
@@ -97,6 +98,9 @@
         [txt appendString:[self checkString:example.chinese]];
     }
     self.textView.text = txt;
+    
+    CGSize newSize = [self.textView sizeThatFits:CGSizeMake(self.bounds.size.width - 10, MAXFLOAT)];
+    self.expectHeight = newSize.height + 30;
 }
 
 - (void)onSwitchViewClicked:(id)sender

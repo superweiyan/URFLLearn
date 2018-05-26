@@ -17,4 +17,6 @@ typedef void (^onAudioNoteClickedCallback)(void);
 @property (nonatomic, strong) EFLAudioModel              *audioModel;
 @property (nonatomic, copy) onAudioNoteClickedCallback   audioNoteCallbaak;
 
+@property (nonatomic, assign) CGFloat                   expectHeight;
+
 @end

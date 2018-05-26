@@ -215,10 +215,10 @@
 {
     CGFloat height = 0;
     if(self.noteViews.frame.size.height == 30) {
-        height = 70;
+        height = self.noteViews.expectHeight;
     }
     else {
-        height = -70;
+        height = -self.noteViews.expectHeight;
     }
     
 //    case 0
@@ -251,7 +251,7 @@
     CGFloat textViewHeight = textViewRect.size.height - height;
     
     WeakSelf
-    [UIView animateWithDuration:1 animations:^{
+    [UIView animateWithDuration:0.5 animations:^{
         weakSelf.infoTextView.frame = CGRectMake(textViewRect.origin.x,
                                                  textViewRect.origin.y,
                                                  textViewRect.size.width,
