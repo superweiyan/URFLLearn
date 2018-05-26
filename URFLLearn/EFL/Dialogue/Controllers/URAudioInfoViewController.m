@@ -154,7 +154,7 @@
     self.infoTextView.delegate = self;
     self.infoTextView.dataSource = self;
     self.infoTextView.estimatedRowHeight = 80;
-    self.infoTextView.backgroundColor = [UIColor whiteColor];
+    self.infoTextView.backgroundColor = [UIColor colorWithString:URBackgroudColor];
     self.infoTextView.rowHeight = UITableViewAutomaticDimension;
     self.infoTextView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.infoTextView];

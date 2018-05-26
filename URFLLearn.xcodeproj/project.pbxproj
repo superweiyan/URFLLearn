@@ -185,6 +185,8 @@
 		6E61772B20995F25009A5D02 /* URFLLearn */ = {
 			isa = PBXGroup;
 			children = (
+				6E884E8520B7B0D50013ABBE /* Plan */,
+				6E884E8420B7B0CE0013ABBE /* CheckIn */,
 				6ECB00A220A092A700870514 /* URFLLearn.entitlements */,
 				6ECB0075209C7B3300870514 /* Macro */,
 				6E6177762099B924009A5D02 /* Resource */,
@@ -267,6 +269,20 @@
 				6ECB00F220A4243600870514 /* Image */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		6E884E8420B7B0CE0013ABBE /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		6E884E8520B7B0D50013ABBE /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plan;
 			sourceTree = "<group>";
 		};
 		6ECB005E209B232400870514 /* Category */ = {

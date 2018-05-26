@@ -39,16 +39,16 @@
         self.backgroundColor = [UIColor clearColor];
         
         self.portView = [[UIImageView alloc] init];
-        self.portView.backgroundColor = [UIColor redColor];
+        self.portView.image = [UIImage imageNamed:@"animals_right"];
         [self.contentView addSubview:self.portView];
         
         self.bubbleImageView = [[UIImageView alloc] init];
-        self.bubbleImageView.backgroundColor = [UIColor blueColor];
+        UIImage *bubbyImage = [UIImage imageNamed:@"会话气泡_right"];
+        self.bubbleImageView.image = [bubbyImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 8, 12, 18) resizingMode:UIImageResizingModeStretch];
         [self.contentView addSubview:self.bubbleImageView];
         
         self.textView = [[UITextView alloc] init];
         self.textView.scrollEnabled = NO;           //关键步骤
-        self.textView.backgroundColor = [UIColor greenColor];
 //        [self.textView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
 //        [self.textView setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [self.bubbleImageView addSubview:self.textView];
@@ -71,10 +71,10 @@
         }];
         
         [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(viewMarginTop,
-                                                                             viewMarginLeading,
-                                                                             viewMarginBottom,
-                                                                             viewMarginLeading + viewSpace));
+            make.edges.equalTo(self.bubbleImageView).insets(UIEdgeInsetsMake(10,
+                                                                             10,
+                                                                             10,
+                                                                             10));
             make.width.mas_lessThanOrEqualTo(self.contentView.frame.size.width * 0.6);
             
             //            make.top.mas_equalTo(self.bubbleImageView.mas_top).mas_offset(viewMarginTop);
