@@ -9,33 +9,28 @@
 #import "URAudioInfoView.h"
 #import "Masonry.h"
 #import <AVFoundation/AVFoundation.h>
+#import "URCommonMarco.h"
 
 @interface URAudioInfoView()
 
-@property (nonatomic, strong) UIButton  *playBtn;               //开始/暂停
-@property (nonatomic, strong) UIButton  *volumeControlBtn;      //声音大小
-@property (nonatomic, strong) UIView    *progressView;          //播放进度
-@property (nonatomic, strong) UIButton  *infPlayConfigBtn;      //无限循环按钮
+@property (nonatomic, strong) UIButton      *playBtn;               //开始/暂停
+@property (nonatomic, strong) UISlider      *progressSlider;        //播放进度
+@property (nonatomic, strong) UISwitch      *infPlaySwitch;         //无限循环按钮
 
 @property (nonatomic, strong) AVPlayer      *player;
 @property (nonatomic, strong) AVPlayerItem  *playItem;
 @property (nonatomic, strong) id            timeObser;
 @property (nonatomic, assign) BOOL          isInfPlay;
-@property (nonatomic, strong) UISlider      *sider;
+@property (nonatomic, strong) UISlider      *volumeSlider;
 @property (nonatomic, assign) CGFloat       currentVolumeValue;
+
 @property (nonatomic, assign) BOOL          isPause;
+@property (nonatomic, strong) id            playerObserve;
+@property (nonatomic, assign) CGFloat       totalAudioSeconds;
 
 @end
 
 @implementation URAudioInfoView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (instancetype)init
 {
@@ -54,12 +49,16 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.player removeTimeObserver:self.playerObserve];
 }
 
 - (void)playAudio:(NSString *)path
 {
     if (path.length > 0) {
         self.playItem = [AVPlayerItem playerItemWithURL:[NSURL fileURLWithPath:path]];
+        
+        CMTime duration = self.playItem.asset.duration;
+        self.totalAudioSeconds = CMTimeGetSeconds(duration);
     }
     else {
         self.playItem = nil;
@@ -68,32 +67,32 @@
 
 #pragma mark - action
 
+- (void)onProgressSliderClicked:(id)sender
+{
+    UISlider *control = (UISlider *)sender;
+    
+    if(control == self.progressSlider){
+        
+        CGFloat currentTime = self.totalAudioSeconds * self.progressSlider.value;
+        
+        [self.player seekToTime:CMTimeMake(currentTime, 1) completionHandler:^(BOOL finished) {
+            
+        }];
+    }
+}
+
 - (void)onvolumeControlClicked:(id)sender
 {
-    if (self.sider) {
-        [self.sider removeFromSuperview];
-        self.sider = nil;
-    }
-    else {
-        self.sider = [[UISlider alloc] init];
-        self.sider.minimumValue = 0.0;
-        self.sider.maximumValue = 1.0;
-        self.sider.value = self.currentVolumeValue;
-        [self.sider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-        [[UIApplication sharedApplication].keyWindow addSubview:self.sider];
-        [self.sider mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.mas_equalTo(self).mas_offset(40);
-            make.trailing.mas_equalTo(self).mas_offset(-40);
-            make.height.mas_equalTo(15);
-            make.bottom.mas_equalTo(self).mas_offset(-60);
-        }];
+    if (self.volumeSlider) {
+        [self.volumeSlider removeFromSuperview];
+        self.volumeSlider = nil;
     }
 }
 
 - (void)sliderValueChanged:(id)sender
 {
     UISlider *control = (UISlider *)sender;
-    if(control == self.sider){
+    if(control == self.volumeSlider){
         self.currentVolumeValue = control.value;
         self.player.volume = self.currentVolumeValue;
     }
@@ -104,20 +103,24 @@
     if(self.player.rate == 1) {
         [self.player pause];
         self.isPause = YES;
+        [self.playBtn setImage:[UIImage imageNamed:@"player_4"] forState:UIControlStateNormal];
     }
     else {
-        
         if (!self.isPause) {
             [self addAudioObserver];
             [self.player replaceCurrentItemWithPlayerItem:self.playItem];
         }
         [self.player play];
+        [self.playBtn setImage:[UIImage imageNamed:@"player_6"] forState:UIControlStateNormal];
     }
 }
 
 - (void)onInfPlayClicked:(id)sender
 {
-    self.isInfPlay = !self.isInfPlay;
+    UISwitch* control = (UISwitch*)sender;
+    if(control == sender){
+        self.isInfPlay = control.on;
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -156,6 +159,18 @@
     [self.player removeObserver:self forKeyPath:@"status"];
 }
 
+#pragma mark - slider
+
+- (void)updateProgressSlider:(CGFloat)rate
+{
+    [self.progressSlider setValue:rate];
+}
+
+- (void)handleSlide:(UISlider *)slider
+{
+    
+}
+
 #pragma mark - init
 
 - (AVPlayer *)player
@@ -163,6 +178,24 @@
     if(!_player) {
         _player = [[AVPlayer alloc] init];
         _player.volume = self.currentVolumeValue;
+        
+        CMTime interval = CMTimeMake(1, 1);
+        
+        WeakSelf
+        //这个方法就是每隔多久调用一次block，函数返回的id类型的对象在不使用时用-removeTimeObserver:释放，官方api是这样说的
+        _playerObserve = [_player addPeriodicTimeObserverForInterval:interval queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+            
+            CGFloat currentTime = CMTimeGetSeconds(time);
+
+            if (self.totalAudioSeconds == 0) {
+                CMTime totalTime = weakSelf.player.currentItem.duration;
+                weakSelf.totalAudioSeconds = CMTimeGetSeconds(totalTime);
+            }
+
+            CGFloat rate = currentTime / self.totalAudioSeconds;
+            [weakSelf updateProgressSlider:rate];
+
+        }];
     }
     return _player;
 }
@@ -185,45 +218,65 @@
 {
     self.playBtn = [[UIButton alloc] init];
     [self addSubview:self.playBtn];
+    [self.playBtn setImage:[UIImage imageNamed:@"player_6"] forState:UIControlStateNormal];
     [self.playBtn addTarget:self action:@selector(onPlayClicked:) forControlEvents:UIControlEventTouchUpInside];
-    self.playBtn.backgroundColor = [UIColor redColor];
     [self.playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self);
         make.leading.mas_equalTo(self).mas_offset(10);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
-    self.volumeControlBtn = [[UIButton alloc] init];
-    [self.volumeControlBtn addTarget:self action:@selector(onvolumeControlClicked:) forControlEvents:UIControlEventTouchUpInside];
-    self.volumeControlBtn.backgroundColor = [UIColor blueColor];
-    [self addSubview:self.volumeControlBtn];
+    self.infPlaySwitch = [[UISwitch alloc] init];
+    [self.infPlaySwitch addTarget:self action:@selector(onInfPlayClicked:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.infPlaySwitch];
     
-    [self.volumeControlBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(self);
+    [self.infPlaySwitch mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(self.playBtn.mas_trailing).mas_offset(10);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-    }];
-    
-    self.infPlayConfigBtn = [[UIButton alloc] init];
-    [self.infPlayConfigBtn addTarget:self action:@selector(onInfPlayClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.infPlayConfigBtn];
-    
-    [self.infPlayConfigBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(self.volumeControlBtn.mas_trailing).mas_offset(10);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(50, 30));
         make.centerY.mas_equalTo(self);
     }];
-
-    self.progressView = [[UIView alloc] init];
-    self.progressView.backgroundColor = [UIColor greenColor];
-    [self addSubview:self.progressView];
     
-    [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(self);
-        make.leading.mas_equalTo(self.infPlayConfigBtn.mas_trailing).mas_offset(10);
+    self.volumeSlider = [[UISlider alloc] init];
+    self.volumeSlider.minimumValue = 0.0;
+    self.volumeSlider.maximumValue = 1.0;
+    self.volumeSlider.value = self.currentVolumeValue;
+    [self.volumeSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.volumeSlider];
+    
+    [self.volumeSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(80);
         make.trailing.mas_equalTo(self).mas_offset(-10);
+        make.height.mas_equalTo(15);
+        make.centerY.mas_equalTo(self);
+    }];
+    
+    UIView *spliteView = [[UIView alloc] init];
+    spliteView.backgroundColor = [UIColor lightGrayColor];
+    [self addSubview:spliteView];
+    
+    [spliteView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self);
+        make.height.mas_equalTo(16);
+        make.width.mas_equalTo(1);
+        make.trailing.mas_equalTo(self.volumeSlider.mas_leading).mas_offset(-5);
+    }];
+    
+    [self.volumeSlider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateNormal];
+    [self.volumeSlider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateHighlighted];
+
+    self.progressSlider = [[UISlider alloc] init];
+    [self.progressSlider addTarget:self action:@selector(onProgressSliderClicked:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.progressSlider];
+    
+    [self.progressSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self);
+        make.leading.mas_equalTo(self.infPlaySwitch.mas_trailing).mas_offset(10);
+        make.trailing.mas_equalTo(spliteView.mas_leading).mas_offset(-5);
         make.height.mas_equalTo(30);
     }];
+    
+    [self.progressSlider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateNormal];
+    [self.progressSlider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateHighlighted];
 }
 
 
