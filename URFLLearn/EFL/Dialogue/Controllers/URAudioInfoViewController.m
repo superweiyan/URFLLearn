@@ -169,25 +169,34 @@
     }];
     
     self.prevBtn = [[UIButton alloc] init];
-    self.prevBtn.backgroundColor = [UIColor blueColor];
+    self.prevBtn.layer.borderColor = [UIColor redColor].CGColor;
+    self.prevBtn.layer.borderWidth = 1;
+    self.prevBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [self.prevBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.prevBtn setTitle:@"上一篇" forState:UIControlStateNormal];
     [self.prevBtn addTarget:self action:@selector(onPrevBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.prevBtn];
     
     [self.prevBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(self.view).mas_offset(containSpace);
-        make.centerY.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(50, 30));
+        make.bottom.mas_equalTo(self.noteViews.mas_top).mas_offset(-10);
     }];
     
     self.nextBtn = [[UIButton alloc] init];
-    self.nextBtn.backgroundColor = [UIColor redColor];
+    self.nextBtn.layer.borderColor = [UIColor redColor].CGColor;
+    self.nextBtn.layer.borderWidth = 1;
+    [self.nextBtn setTitle:@"下一篇" forState:UIControlStateNormal];
+    [self.nextBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.nextBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:self.nextBtn];
     [self.nextBtn addTarget:self action:@selector(onNextBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.mas_equalTo(self.view).mas_offset(-containSpace);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-        make.centerY.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(50, 30));
+//        make.centerY.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.noteViews.mas_top).mas_offset(-10);
     }];
 }
 
