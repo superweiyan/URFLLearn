@@ -27,6 +27,7 @@
 @property (nonatomic, assign) BOOL          isPause;
 @property (nonatomic, strong) id            playerObserve;
 @property (nonatomic, assign) CGFloat       totalAudioSeconds;
+@property (nonatomic, assign) BOOL          isKVO;
 
 @end
 
@@ -49,7 +50,11 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.player removeTimeObserver:self.playerObserve];
+    if(self.playerObserve) {
+        [self.player removeTimeObserver:self.playerObserve];
+    }
+    
+    [self removeAudioObserver];
 }
 
 - (void)playAudio:(NSString *)path
@@ -103,7 +108,7 @@
     if(self.player.rate == 1) {
         [self.player pause];
         self.isPause = YES;
-        [self.playBtn setImage:[UIImage imageNamed:@"player_4"] forState:UIControlStateNormal];
+        [self.playBtn setImage:[UIImage imageNamed:@"player_6"] forState:UIControlStateNormal];
     }
     else {
         if (!self.isPause) {
@@ -111,7 +116,7 @@
             [self.player replaceCurrentItemWithPlayerItem:self.playItem];
         }
         [self.player play];
-        [self.playBtn setImage:[UIImage imageNamed:@"player_6"] forState:UIControlStateNormal];
+        [self.playBtn setImage:[UIImage imageNamed:@"player_4"] forState:UIControlStateNormal];
     }
 }
 
@@ -146,17 +151,25 @@
     }
     else {
         [self removeAudioObserver];
+        [self.playBtn setImage:[UIImage imageNamed:@"player_6"] forState:UIControlStateNormal];
     }
 }
 
 - (void)addAudioObserver
 {
-    [self.player addObserver:self forKeyPath:@"status" options:0 context:nil];
+    if (!self.isKVO) {
+        self.isKVO = YES;
+        [self.player addObserver:self forKeyPath:@"status" options:0 context:nil];
+    }
+    
 }
 
 - (void)removeAudioObserver
 {
-    [self.player removeObserver:self forKeyPath:@"status"];
+    if(self.isKVO) {
+        self.isKVO = NO;
+        [self.player removeObserver:self forKeyPath:@"status"];
+    }
 }
 
 #pragma mark - slider
