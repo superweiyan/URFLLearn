@@ -17,6 +17,14 @@
 		6E61775120995F27009A5D02 /* URFLLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61775020995F27009A5D02 /* URFLLearnUITests.m */; };
 		6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61776E20999FF7009A5D02 /* URColorConfig.m */; };
 		6E6177752099AA64009A5D02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6177742099AA64009A5D02 /* AVFoundation.framework */; };
+		6E884E9B20BD2A3B0013ABBE /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884E9A20BD2A3B0013ABBE /* NSDictionary+Utils.m */; };
+		6E884E9E20BD2DCD0013ABBE /* EFLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884E9D20BD2DCD0013ABBE /* EFLModule.m */; };
+		6E884EA420BD31780013ABBE /* UREFLDialogueModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EA320BD31780013ABBE /* UREFLDialogueModule.m */; };
+		6E884EB020BD35690013ABBE /* EFLLessonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EA720BD35690013ABBE /* EFLLessonUtils.m */; };
+		6E884EB120BD35690013ABBE /* UREFLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EAA20BD35690013ABBE /* UREFLViewController.m */; };
+		6E884EB220BD35690013ABBE /* EFL.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E884EAD20BD35690013ABBE /* EFL.json */; };
+		6E884EB320BD35690013ABBE /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EAF20BD35690013ABBE /* EFLTypes.m */; };
+		6E884EB620BD368B0013ABBE /* EFLLessonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EB520BD368B0013ABBE /* EFLLessonCollectionViewCell.m */; };
 		6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0058209AFAA500870514 /* URLayoutConfig.m */; };
 		6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0060209B232400870514 /* UIColor+Hex.m */; };
 		6ECB0064209B232400870514 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0062209B232400870514 /* NSString+Utils.m */; };
@@ -33,10 +41,6 @@
 		6ECB00DD20A3202C00870514 /* URAudioInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00D920A3202C00870514 /* URAudioInfoViewController.m */; };
 		6ECB00DE20A3202C00870514 /* URAudioLearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00DC20A3202C00870514 /* URAudioLearnViewController.m */; };
 		6ECB00E520A3205900870514 /* EFLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00E120A3205900870514 /* EFLCore.m */; };
-		6ECB00E620A3205900870514 /* EFLModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00E420A3205900870514 /* EFLModule.m */; };
-		6ECB00EC20A3224A00870514 /* UREFLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00EB20A3224A00870514 /* UREFLViewController.m */; };
-		6ECB00EE20A3277000870514 /* EFL.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ECB00ED20A3276F00870514 /* EFL.json */; };
-		6ECB00F120A32ECD00870514 /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00EF20A32ECC00870514 /* EFLTypes.m */; };
 		6ECB00F420A4247200870514 /* introduct_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ECB00F320A4247200870514 /* introduct_logo.jpg */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +84,21 @@
 		6E61776D20999FF7009A5D02 /* URColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URColorConfig.h; sourceTree = "<group>"; };
 		6E61776E20999FF7009A5D02 /* URColorConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URColorConfig.m; sourceTree = "<group>"; };
 		6E6177742099AA64009A5D02 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6E884E9920BD2A3B0013ABBE /* NSDictionary+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
+		6E884E9A20BD2A3B0013ABBE /* NSDictionary+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utils.m"; sourceTree = "<group>"; };
+		6E884E9C20BD2DCD0013ABBE /* EFLModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLModule.h; sourceTree = "<group>"; };
+		6E884E9D20BD2DCD0013ABBE /* EFLModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLModule.m; sourceTree = "<group>"; };
+		6E884EA220BD31780013ABBE /* UREFLDialogueModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UREFLDialogueModule.h; sourceTree = "<group>"; };
+		6E884EA320BD31780013ABBE /* UREFLDialogueModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UREFLDialogueModule.m; sourceTree = "<group>"; };
+		6E884EA720BD35690013ABBE /* EFLLessonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLLessonUtils.m; sourceTree = "<group>"; };
+		6E884EA820BD35690013ABBE /* EFLLessonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLLessonUtils.h; sourceTree = "<group>"; };
+		6E884EAA20BD35690013ABBE /* UREFLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UREFLViewController.m; sourceTree = "<group>"; };
+		6E884EAB20BD35690013ABBE /* UREFLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UREFLViewController.h; sourceTree = "<group>"; };
+		6E884EAD20BD35690013ABBE /* EFL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EFL.json; sourceTree = "<group>"; };
+		6E884EAE20BD35690013ABBE /* EFLTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLTypes.h; sourceTree = "<group>"; };
+		6E884EAF20BD35690013ABBE /* EFLTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLTypes.m; sourceTree = "<group>"; };
+		6E884EB420BD368B0013ABBE /* EFLLessonCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLLessonCollectionViewCell.h; sourceTree = "<group>"; };
+		6E884EB520BD368B0013ABBE /* EFLLessonCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLLessonCollectionViewCell.m; sourceTree = "<group>"; };
 		6ECB0057209AFAA500870514 /* URLayoutConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLayoutConfig.h; sourceTree = "<group>"; };
 		6ECB0058209AFAA500870514 /* URLayoutConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLayoutConfig.m; sourceTree = "<group>"; };
 		6ECB005F209B232400870514 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
@@ -113,13 +132,6 @@
 		6ECB00DC20A3202C00870514 /* URAudioLearnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URAudioLearnViewController.m; sourceTree = "<group>"; };
 		6ECB00E020A3205900870514 /* EFLCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLCore.h; sourceTree = "<group>"; };
 		6ECB00E120A3205900870514 /* EFLCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLCore.m; sourceTree = "<group>"; };
-		6ECB00E320A3205900870514 /* EFLModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLModule.h; sourceTree = "<group>"; };
-		6ECB00E420A3205900870514 /* EFLModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLModule.m; sourceTree = "<group>"; };
-		6ECB00EA20A3224A00870514 /* UREFLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UREFLViewController.h; sourceTree = "<group>"; };
-		6ECB00EB20A3224A00870514 /* UREFLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UREFLViewController.m; sourceTree = "<group>"; };
-		6ECB00ED20A3276F00870514 /* EFL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EFL.json; sourceTree = "<group>"; };
-		6ECB00EF20A32ECC00870514 /* EFLTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLTypes.m; sourceTree = "<group>"; };
-		6ECB00F020A32ECC00870514 /* EFLTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLTypes.h; sourceTree = "<group>"; };
 		6ECB00F320A4247200870514 /* introduct_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = introduct_logo.jpg; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,13 +241,11 @@
 		6E6177612099983D009A5D02 /* EFL */ = {
 			isa = PBXGroup;
 			children = (
-				6ECB00F020A32ECC00870514 /* EFLTypes.h */,
-				6ECB00EF20A32ECC00870514 /* EFLTypes.m */,
-				6ECB00ED20A3276F00870514 /* EFL.json */,
+				6E884EA520BD35690013ABBE /* EFLLesson */,
 				6ECB00C920A31FD100870514 /* Dialogue */,
 				6ECB00C820A31F6800870514 /* VOASpecial */,
-				6ECB00EA20A3224A00870514 /* UREFLViewController.h */,
-				6ECB00EB20A3224A00870514 /* UREFLViewController.m */,
+				6E884E9C20BD2DCD0013ABBE /* EFLModule.h */,
+				6E884E9D20BD2DCD0013ABBE /* EFLModule.m */,
 			);
 			path = EFL;
 			sourceTree = "<group>";
@@ -285,6 +295,46 @@
 			path = Plan;
 			sourceTree = "<group>";
 		};
+		6E884EA520BD35690013ABBE /* EFLLesson */ = {
+			isa = PBXGroup;
+			children = (
+				6E884EA620BD35690013ABBE /* Module */,
+				6E884EA920BD35690013ABBE /* Controller */,
+				6E884EAC20BD35690013ABBE /* Model */,
+			);
+			path = EFLLesson;
+			sourceTree = "<group>";
+		};
+		6E884EA620BD35690013ABBE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6E884EA720BD35690013ABBE /* EFLLessonUtils.m */,
+				6E884EA820BD35690013ABBE /* EFLLessonUtils.h */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6E884EA920BD35690013ABBE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E884EAA20BD35690013ABBE /* UREFLViewController.m */,
+				6E884EAB20BD35690013ABBE /* UREFLViewController.h */,
+				6E884EB420BD368B0013ABBE /* EFLLessonCollectionViewCell.h */,
+				6E884EB520BD368B0013ABBE /* EFLLessonCollectionViewCell.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6E884EAC20BD35690013ABBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E884EAD20BD35690013ABBE /* EFL.json */,
+				6E884EAE20BD35690013ABBE /* EFLTypes.h */,
+				6E884EAF20BD35690013ABBE /* EFLTypes.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6ECB005E209B232400870514 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +342,8 @@
 				6ECB0060209B232400870514 /* UIColor+Hex.m */,
 				6ECB0061209B232400870514 /* UIColor+Hex.h */,
 				6ECB0062209B232400870514 /* NSString+Utils.m */,
+				6E884E9920BD2A3B0013ABBE /* NSDictionary+Utils.h */,
+				6E884E9A20BD2A3B0013ABBE /* NSDictionary+Utils.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -389,8 +441,8 @@
 		6ECB00E220A3205900870514 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				6ECB00E320A3205900870514 /* EFLModule.h */,
-				6ECB00E420A3205900870514 /* EFLModule.m */,
+				6E884EA220BD31780013ABBE /* UREFLDialogueModule.h */,
+				6E884EA320BD31780013ABBE /* UREFLDialogueModule.m */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -526,7 +578,7 @@
 				6E61773620995F27009A5D02 /* Assets.xcassets in Resources */,
 				6ECB00F420A4247200870514 /* introduct_logo.jpg in Resources */,
 				6E61773420995F25009A5D02 /* Main.storyboard in Resources */,
-				6ECB00EE20A3277000870514 /* EFL.json in Resources */,
+				6E884EB220BD35690013ABBE /* EFL.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,27 +654,31 @@
 			files = (
 				6E61773120995F25009A5D02 /* ViewController.m in Sources */,
 				6ECB00DD20A3202C00870514 /* URAudioInfoViewController.m in Sources */,
+				6E884EB120BD35690013ABBE /* UREFLViewController.m in Sources */,
 				6ECB00D720A31FFF00870514 /* URAudioInfoView.m in Sources */,
 				6ECB0081209D5DE200870514 /* URModuleManager.m in Sources */,
-				6ECB00EC20A3224A00870514 /* UREFLViewController.m in Sources */,
+				6E884EB320BD35690013ABBE /* EFLTypes.m in Sources */,
 				6ECB0078209C7BB400870514 /* URCommonMarco.m in Sources */,
+				6E884EB620BD368B0013ABBE /* EFLLessonCollectionViewCell.m in Sources */,
 				6ECB00DE20A3202C00870514 /* URAudioLearnViewController.m in Sources */,
 				6ECB0064209B232400870514 /* NSString+Utils.m in Sources */,
 				6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */,
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
+				6E884E9B20BD2A3B0013ABBE /* NSDictionary+Utils.m in Sources */,
 				6ECB00D420A31FFF00870514 /* URAudioNoteView.m in Sources */,
-				6ECB00F120A32ECD00870514 /* EFLTypes.m in Sources */,
+				6E884EA420BD31780013ABBE /* UREFLDialogueModule.m in Sources */,
 				6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */,
 				6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */,
 				6ECB00E520A3205900870514 /* EFLCore.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
+				6E884E9E20BD2DCD0013ABBE /* EFLModule.m in Sources */,
 				6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */,
 				6ECB00A520A1502300870514 /* URkeyChain.m in Sources */,
 				6ECB00D620A31FFF00870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
 				6ECB00A120A062A000870514 /* URUniqueManager.m in Sources */,
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
 				6ECB00D520A31FFF00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */,
-				6ECB00E620A3205900870514 /* EFLModule.m in Sources */,
+				6E884EB020BD35690013ABBE /* EFLLessonUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

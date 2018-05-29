@@ -19,5 +19,5 @@
 @implementation EFLAudioModel
 @end
 
-@implementation EFLLessionInfoModel
+@implementation EFLLessonInfoModel
 @end

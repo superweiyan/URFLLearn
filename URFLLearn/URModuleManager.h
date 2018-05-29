@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class EFLModule;
+@class UREFLDialogueModule;
 @class URUniqueManager;
 
 @interface URModuleManager : NSObject
 
-@property (nonatomic, strong) EFLModule                 *eFLModule;
+@property (nonatomic, strong) UREFLDialogueModule       *eFLDialogueModule;
 @property (nonatomic, strong) URUniqueManager           *uniqueManager;
 
 + (instancetype)sharedObject;

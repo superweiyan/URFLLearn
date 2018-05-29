@@ -7,8 +7,15 @@
 //
 
 #import "URModuleManager.h"
-#import "EFLModule.h"
+#import "UREFLDialogueModule.h"
 #import "URUniqueManager.h"
+//#import "EFLModule.h"
+
+@interface URModuleManager()
+
+@property (nonatomic, strong) NSMutableDictionary *moduleDict;
+
+@end
 
 @implementation URModuleManager
 
@@ -20,7 +27,6 @@
         __instance = [[URModuleManager alloc] init];   \
     });                                         \
     return __instance;
-//    http://makefriends.bs2dl.yy.com/EFL01.zip
 }
 
 
@@ -28,9 +34,21 @@
 {
     self = [super init];
     if (self) {
-        self.eFLModule = [[EFLModule alloc] init];
+        
+        self.moduleDict = [[NSMutableDictionary alloc] init];
+        
+        self.eFLDialogueModule = [[UREFLDialogueModule alloc] init];
         self.uniqueManager = [[URUniqueManager alloc] init];
+        
+        [self registerModule:@"EFLModule"];
     }
     return self;
 }
+
+- (void)registerModule:(NSString *)key
+{
+    id obj = [[NSClassFromString(key) alloc] init];
+    [self.moduleDict setObject:obj forKey:key];
+}
+
 @end

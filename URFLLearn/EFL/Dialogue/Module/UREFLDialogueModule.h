@@ -10,6 +10,6 @@
 
 typedef void (^unzipCallback)(BOOL, NSError*);
 
-@interface EFLModule : NSObject
+@interface UREFLDialogueModule : NSObject
 
 @end

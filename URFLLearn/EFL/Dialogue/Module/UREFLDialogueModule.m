@@ -6,12 +6,12 @@
 //  Copyright © 2018 lin weiyan. All rights reserved.
 //
 
-#import "EFLModule.h"
+#import "UREFLDialogueModule.h"
 #import "URPathConfig.h"
 #import "URFLNetUtils.h"
 #import "SSZipArchive.h"
 
-@implementation EFLModule
+@implementation UREFLDialogueModule
 
 - (instancetype)init
 {

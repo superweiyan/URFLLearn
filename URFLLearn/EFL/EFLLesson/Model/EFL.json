@@ -2,15 +2,15 @@
     "LGE": "Englist",
     "datas": [
               {
-              "lessionId": "simpleDialoug",
+              "lessonId": "simpleDialoug",
               "name": "对话",
-              "logo": "",
+              "logo": "http://makefriends.bs2dl.yy.com/59e650aa243e3_610.jpg",
               "description": "简单日常对话"
               },
               {
-              "lessionId": "BBCSpecial",
+              "lessonId": "BBCSpecial",
               "name": "BBC慢速英语",
-              "logo": "",
+              "logo": "http://makefriends.bs2dl.yy.com/ce19ce00946f45d0887e4ea00def8b9d1.jpg",
               "description": "慢速英语，提升英语口语听力"
               }
               ]

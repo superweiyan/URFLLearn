@@ -28,10 +28,10 @@
 
 @end
 
-@interface EFLLessionInfoModel : NSObject
+@interface EFLLessonInfoModel : NSObject
 
-@property (nonatomic, strong) NSString * lessionId;
-@property (nonatomic, strong) NSString * lessionName;
+@property (nonatomic, strong) NSString * lessonId;
+@property (nonatomic, strong) NSString * lessonName;
 @property (nonatomic, strong) NSString * logo;
 @property (nonatomic, strong) NSString * note;
 

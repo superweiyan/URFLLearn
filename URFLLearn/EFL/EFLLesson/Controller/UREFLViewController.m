@@ -13,11 +13,13 @@
 #import "EFLTypes.h"
 #import "URLayoutConfig.h"
 #import "URCommonMarco.h"
+#import "EFLLessonUtils.h"
+#import "EFLLessonCollectionViewCell.h"
 
 @interface UREFLViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView                  *lessionCardCollectView;
-@property (nonatomic, strong) NSArray<EFLLessionInfoModel *>    *infoModel;
+@property (nonatomic, strong) NSArray<EFLLessonInfoModel *>     *infoModel;
 
 @end
 
@@ -47,8 +49,11 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cardIndentifier" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
+    EFLLessonCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cardIndentifier" forIndexPath:indexPath];
+    if (indexPath.row < self.infoModel.count) {
+        cell.infoModel = [self.infoModel objectAtIndex:indexPath.row];
+    }
+    
     return cell;
 }
 
@@ -56,18 +61,15 @@
 {
     if (indexPath.row < self.infoModel.count) {
         
-        EFLLessionInfoModel *model = [self.infoModel objectAtIndex:indexPath.row];
-        if ([model.lessionId isEqualToString:@"simpleDialoug"]) {
+        EFLLessonInfoModel *model = [self.infoModel objectAtIndex:indexPath.row];
+        if ([model.lessonId isEqualToString:@"simpleDialoug"]) {
             jumpViewController(@"URAudioLearnViewController");
         }
-        else if ([model.lessionId isEqualToString:@"BBCSpecial"]) {
+        else if ([model.lessonId isEqualToString:@"BBCSpecial"]) {
             
         }
     }
 }
-
-
-
 
 #pragma mark - init
 
@@ -106,6 +108,7 @@
     self.lessionCardCollectView.delegate = self;
     self.lessionCardCollectView.dataSource = self;
     [self.view addSubview:self.lessionCardCollectView];
+    self.lessionCardCollectView.backgroundColor = [UIColor whiteColor];
     
     [self.lessionCardCollectView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.and.trailing.mas_equalTo(self.view);
@@ -113,40 +116,12 @@
         make.height.mas_equalTo(250);
     }];
     
-    [self.lessionCardCollectView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cardIndentifier"];
+    [self.lessionCardCollectView registerClass:[EFLLessonCollectionViewCell class] forCellWithReuseIdentifier:@"cardIndentifier"];
 }
 
 - (void)loadLessionConfig
 {
-    NSString *path = [URPathConfig loadNSBundleResurce:@"EFL.json"];
-    NSData *data = [NSData dataWithContentsOfFile:path options:0 error:nil];
-    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    NSDictionary *dict = [str convertJson];
-    [self parseDict:dict];
-}
-
-- (void)parseDict:(NSDictionary *)info
-{
-    if (![info isKindOfClass:[NSDictionary class]]) {
-        return ;
-    }
-
-    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-    
-    NSArray *dataArray = [info objectForKey:@"datas"];
-    for (int i = 0; i < dataArray.count; i++) {
-        NSDictionary *info = [dataArray objectAtIndex:i];
-        EFLLessionInfoModel *model = [[EFLLessionInfoModel alloc] init];
-        model.lessionName = [info objectForKey:@"name"];
-        model.logo = [info objectForKey:@"logo"];
-        model.note = [info objectForKey:@"description"];
-        model.lessionId = [info objectForKey:@"lessionId"];
-        
-        [itemArray addObject:model];
-    }
-    
-    self.infoModel = itemArray;
+    self.infoModel = [EFLLessonUtils parserLessonJson];
 }
 
 @end
