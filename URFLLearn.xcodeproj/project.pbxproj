@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E11663120C8D7CE00B7C042 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11662F20C8D7CE00B7C042 /* ViewController.m */; };
+		6E11663420C8D7EA00B7C042 /* URMainLessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663320C8D7EA00B7C042 /* URMainLessionTableViewCell.m */; };
+		6E11663720C932F200B7C042 /* URMainType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663620C932F200B7C042 /* URMainType.m */; };
+		6E11663A20C9358A00B7C042 /* NSObject+modelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663920C9358A00B7C042 /* NSObject+modelHeight.m */; };
 		6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61772D20995F25009A5D02 /* AppDelegate.m */; };
-		6E61773120995F25009A5D02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61773020995F25009A5D02 /* ViewController.m */; };
 		6E61773420995F25009A5D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773220995F25009A5D02 /* Main.storyboard */; };
 		6E61773620995F27009A5D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773520995F27009A5D02 /* Assets.xcassets */; };
 		6E61773920995F27009A5D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773720995F27009A5D02 /* LaunchScreen.storyboard */; };
@@ -65,11 +68,17 @@
 /* Begin PBXFileReference section */
 		07508C9FC901B7DE2BA8E386 /* Pods-URFLLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		6987657F61A977D66274B525 /* Pods_URFLLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URFLLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E11662F20C8D7CE00B7C042 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6E11663020C8D7CE00B7C042 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6E11663220C8D7EA00B7C042 /* URMainLessionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URMainLessionTableViewCell.h; sourceTree = "<group>"; };
+		6E11663320C8D7EA00B7C042 /* URMainLessionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URMainLessionTableViewCell.m; sourceTree = "<group>"; };
+		6E11663520C932F200B7C042 /* URMainType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URMainType.h; sourceTree = "<group>"; };
+		6E11663620C932F200B7C042 /* URMainType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URMainType.m; sourceTree = "<group>"; };
+		6E11663820C9358A00B7C042 /* NSObject+modelHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+modelHeight.h"; sourceTree = "<group>"; };
+		6E11663920C9358A00B7C042 /* NSObject+modelHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+modelHeight.m"; sourceTree = "<group>"; };
 		6E61772920995F25009A5D02 /* URFLLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URFLLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61772C20995F25009A5D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E61772D20995F25009A5D02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6E61772F20995F25009A5D02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6E61773020995F25009A5D02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6E61773320995F25009A5D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E61773520995F27009A5D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E61773820995F27009A5D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -172,6 +181,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6E11662E20C8D7AB00B7C042 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				6E11663020C8D7CE00B7C042 /* ViewController.h */,
+				6E11662F20C8D7CE00B7C042 /* ViewController.m */,
+				6E11663220C8D7EA00B7C042 /* URMainLessionTableViewCell.h */,
+				6E11663320C8D7EA00B7C042 /* URMainLessionTableViewCell.m */,
+				6E11663520C932F200B7C042 /* URMainType.h */,
+				6E11663620C932F200B7C042 /* URMainType.m */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
 		6E61772020995F25009A5D02 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +219,7 @@
 		6E61772B20995F25009A5D02 /* URFLLearn */ = {
 			isa = PBXGroup;
 			children = (
+				6E11662E20C8D7AB00B7C042 /* MainPage */,
 				6E884E8520B7B0D50013ABBE /* Plan */,
 				6E884E8420B7B0CE0013ABBE /* CheckIn */,
 				6ECB00A220A092A700870514 /* URFLLearn.entitlements */,
@@ -207,8 +230,6 @@
 				6E6177612099983D009A5D02 /* EFL */,
 				6E61772C20995F25009A5D02 /* AppDelegate.h */,
 				6E61772D20995F25009A5D02 /* AppDelegate.m */,
-				6E61772F20995F25009A5D02 /* ViewController.h */,
-				6E61773020995F25009A5D02 /* ViewController.m */,
 				6E61773220995F25009A5D02 /* Main.storyboard */,
 				6E61773520995F27009A5D02 /* Assets.xcassets */,
 				6E61773720995F27009A5D02 /* LaunchScreen.storyboard */,
@@ -344,6 +365,8 @@
 				6ECB0062209B232400870514 /* NSString+Utils.m */,
 				6E884E9920BD2A3B0013ABBE /* NSDictionary+Utils.h */,
 				6E884E9A20BD2A3B0013ABBE /* NSDictionary+Utils.m */,
+				6E11663820C9358A00B7C042 /* NSObject+modelHeight.h */,
+				6E11663920C9358A00B7C042 /* NSObject+modelHeight.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -652,7 +675,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E61773120995F25009A5D02 /* ViewController.m in Sources */,
 				6ECB00DD20A3202C00870514 /* URAudioInfoViewController.m in Sources */,
 				6E884EB120BD35690013ABBE /* UREFLViewController.m in Sources */,
 				6ECB00D720A31FFF00870514 /* URAudioInfoView.m in Sources */,
@@ -662,6 +684,7 @@
 				6E884EB620BD368B0013ABBE /* EFLLessonCollectionViewCell.m in Sources */,
 				6ECB00DE20A3202C00870514 /* URAudioLearnViewController.m in Sources */,
 				6ECB0064209B232400870514 /* NSString+Utils.m in Sources */,
+				6E11663120C8D7CE00B7C042 /* ViewController.m in Sources */,
 				6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */,
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
 				6E884E9B20BD2A3B0013ABBE /* NSDictionary+Utils.m in Sources */,
@@ -671,8 +694,11 @@
 				6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */,
 				6ECB00E520A3205900870514 /* EFLCore.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
+				6E11663420C8D7EA00B7C042 /* URMainLessionTableViewCell.m in Sources */,
 				6E884E9E20BD2DCD0013ABBE /* EFLModule.m in Sources */,
 				6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */,
+				6E11663A20C9358A00B7C042 /* NSObject+modelHeight.m in Sources */,
+				6E11663720C932F200B7C042 /* URMainType.m in Sources */,
 				6ECB00A520A1502300870514 /* URkeyChain.m in Sources */,
 				6ECB00D620A31FFF00870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
 				6ECB00A120A062A000870514 /* URUniqueManager.m in Sources */,
