@@ -36,12 +36,6 @@
     self.logoView = [[UIImageView alloc] init];
     [self addSubview:self.logoView];
     
-    [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(self).mas_offset(5);
-        make.trailing.mas_equalTo(self).mas_offset(-5);
-        make.top.mas_equalTo(self).mas_offset(5);
-        make.height.mas_equalTo(self).mas_offset(-5);
-    }];
     
     self.gradLayer = [CAGradientLayer layer];
     NSArray *colors = [NSArray arrayWithObjects:
@@ -63,18 +57,32 @@
     self.lessonNameLabel.textColor = [UIColor whiteColor];
     self.lessonNameLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.lessonNameLabel];
-    [self.lessonNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self).mas_offset(-15);
-        make.height.mas_equalTo(15);
-        make.leading.mas_equalTo(self);
-        make.trailing.mas_equalTo(self);
-    }];
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     [self.gradLayer setFrame:self.logoView.bounds];
+}
+
+- (void)updateConstraints
+{
+    [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(self).mas_offset(5);
+        make.trailing.mas_equalTo(self).mas_offset(-5);
+        make.top.mas_equalTo(self).mas_offset(5);
+        make.height.mas_equalTo(self).mas_offset(-5);
+    }];
+
+    
+    [self.lessonNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self).mas_offset(-15);
+        make.height.mas_equalTo(15);
+        make.leading.mas_equalTo(self);
+        make.trailing.mas_equalTo(self);
+    }];
+    
+    [super updateConstraints];
 }
 
 - (void)setInfoModel:(EFLLessonInfoModel *)infoModel

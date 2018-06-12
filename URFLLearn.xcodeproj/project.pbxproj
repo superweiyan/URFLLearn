@@ -11,6 +11,13 @@
 		6E11663420C8D7EA00B7C042 /* URMainLessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663320C8D7EA00B7C042 /* URMainLessionTableViewCell.m */; };
 		6E11663720C932F200B7C042 /* URMainType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663620C932F200B7C042 /* URMainType.m */; };
 		6E11663A20C9358A00B7C042 /* NSObject+modelHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663920C9358A00B7C042 /* NSObject+modelHeight.m */; };
+		6E11664520CBAFD500B7C042 /* URNCEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11664420CBAFD500B7C042 /* URNCEViewController.m */; };
+		6E11664820CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11664720CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.m */; };
+		6E11664B20CBCA0B00B7C042 /* URNCEInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11664A20CBCA0B00B7C042 /* URNCEInfoViewController.m */; };
+		6E11664E20CBCA8700B7C042 /* URLrsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11664D20CBCA8700B7C042 /* URLrsParser.m */; };
+		6E11677520CCC74700B7C042 /* URNCECore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677420CCC74700B7C042 /* URNCECore.m */; };
+		6E11677920CCD15700B7C042 /* URNCEDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677820CCD15700B7C042 /* URNCEDownloadViewController.m */; };
+		6E11677C20CE198700B7C042 /* URNCEDownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677B20CE198700B7C042 /* URNCEDownloadTableViewCell.m */; };
 		6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61772D20995F25009A5D02 /* AppDelegate.m */; };
 		6E61773420995F25009A5D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773220995F25009A5D02 /* Main.storyboard */; };
 		6E61773620995F27009A5D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773520995F27009A5D02 /* Assets.xcassets */; };
@@ -76,6 +83,20 @@
 		6E11663620C932F200B7C042 /* URMainType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URMainType.m; sourceTree = "<group>"; };
 		6E11663820C9358A00B7C042 /* NSObject+modelHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+modelHeight.h"; sourceTree = "<group>"; };
 		6E11663920C9358A00B7C042 /* NSObject+modelHeight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+modelHeight.m"; sourceTree = "<group>"; };
+		6E11664320CBAFD500B7C042 /* URNCEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEViewController.h; sourceTree = "<group>"; };
+		6E11664420CBAFD500B7C042 /* URNCEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEViewController.m; sourceTree = "<group>"; };
+		6E11664620CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEVolumeCollectionViewCell.h; sourceTree = "<group>"; };
+		6E11664720CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEVolumeCollectionViewCell.m; sourceTree = "<group>"; };
+		6E11664920CBCA0B00B7C042 /* URNCEInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEInfoViewController.h; sourceTree = "<group>"; };
+		6E11664A20CBCA0B00B7C042 /* URNCEInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEInfoViewController.m; sourceTree = "<group>"; };
+		6E11664C20CBCA8700B7C042 /* URLrsParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLrsParser.h; sourceTree = "<group>"; };
+		6E11664D20CBCA8700B7C042 /* URLrsParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLrsParser.m; sourceTree = "<group>"; };
+		6E11677320CCC74700B7C042 /* URNCECore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCECore.h; sourceTree = "<group>"; };
+		6E11677420CCC74700B7C042 /* URNCECore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCECore.m; sourceTree = "<group>"; };
+		6E11677720CCD15700B7C042 /* URNCEDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEDownloadViewController.h; sourceTree = "<group>"; };
+		6E11677820CCD15700B7C042 /* URNCEDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEDownloadViewController.m; sourceTree = "<group>"; };
+		6E11677A20CE198700B7C042 /* URNCEDownloadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEDownloadTableViewCell.h; sourceTree = "<group>"; };
+		6E11677B20CE198700B7C042 /* URNCEDownloadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEDownloadTableViewCell.m; sourceTree = "<group>"; };
 		6E61772920995F25009A5D02 /* URFLLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URFLLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61772C20995F25009A5D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E61772D20995F25009A5D02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -194,6 +215,43 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		6E11664220CBAF4800B7C042 /* NCE */ = {
+			isa = PBXGroup;
+			children = (
+				6E11677620CCD12400B7C042 /* Controller */,
+				6E11677220CCC73100B7C042 /* module */,
+				6E11664320CBAFD500B7C042 /* URNCEViewController.h */,
+				6E11664420CBAFD500B7C042 /* URNCEViewController.m */,
+				6E11664620CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.h */,
+				6E11664720CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.m */,
+				6E11664920CBCA0B00B7C042 /* URNCEInfoViewController.h */,
+				6E11664A20CBCA0B00B7C042 /* URNCEInfoViewController.m */,
+				6E11664C20CBCA8700B7C042 /* URLrsParser.h */,
+				6E11664D20CBCA8700B7C042 /* URLrsParser.m */,
+			);
+			path = NCE;
+			sourceTree = "<group>";
+		};
+		6E11677220CCC73100B7C042 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				6E11677320CCC74700B7C042 /* URNCECore.h */,
+				6E11677420CCC74700B7C042 /* URNCECore.m */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		6E11677620CCD12400B7C042 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E11677720CCD15700B7C042 /* URNCEDownloadViewController.h */,
+				6E11677820CCD15700B7C042 /* URNCEDownloadViewController.m */,
+				6E11677A20CE198700B7C042 /* URNCEDownloadTableViewCell.h */,
+				6E11677B20CE198700B7C042 /* URNCEDownloadTableViewCell.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		6E61772020995F25009A5D02 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +320,7 @@
 		6E6177612099983D009A5D02 /* EFL */ = {
 			isa = PBXGroup;
 			children = (
+				6E11664220CBAF4800B7C042 /* NCE */,
 				6E884EA520BD35690013ABBE /* EFLLesson */,
 				6ECB00C920A31FD100870514 /* Dialogue */,
 				6ECB00C820A31F6800870514 /* VOASpecial */,
@@ -687,9 +746,11 @@
 				6E11663120C8D7CE00B7C042 /* ViewController.m in Sources */,
 				6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */,
 				6E61776F20999FF7009A5D02 /* URColorConfig.m in Sources */,
+				6E11677920CCD15700B7C042 /* URNCEDownloadViewController.m in Sources */,
 				6E884E9B20BD2A3B0013ABBE /* NSDictionary+Utils.m in Sources */,
 				6ECB00D420A31FFF00870514 /* URAudioNoteView.m in Sources */,
 				6E884EA420BD31780013ABBE /* UREFLDialogueModule.m in Sources */,
+				6E11677520CCC74700B7C042 /* URNCECore.m in Sources */,
 				6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */,
 				6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */,
 				6ECB00E520A3205900870514 /* EFLCore.m in Sources */,
@@ -697,7 +758,11 @@
 				6E11663420C8D7EA00B7C042 /* URMainLessionTableViewCell.m in Sources */,
 				6E884E9E20BD2DCD0013ABBE /* EFLModule.m in Sources */,
 				6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */,
+				6E11664820CBBCAA00B7C042 /* URNCEVolumeCollectionViewCell.m in Sources */,
+				6E11664E20CBCA8700B7C042 /* URLrsParser.m in Sources */,
 				6E11663A20C9358A00B7C042 /* NSObject+modelHeight.m in Sources */,
+				6E11677C20CE198700B7C042 /* URNCEDownloadTableViewCell.m in Sources */,
+				6E11664520CBAFD500B7C042 /* URNCEViewController.m in Sources */,
 				6E11663720C932F200B7C042 /* URMainType.m in Sources */,
 				6ECB00A520A1502300870514 /* URkeyChain.m in Sources */,
 				6ECB00D620A31FFF00870514 /* UREFLAudioDialoguePeerTableViewCell.m in Sources */,
@@ -705,6 +770,7 @@
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
 				6ECB00D520A31FFF00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */,
 				6E884EB020BD35690013ABBE /* EFLLessonUtils.m in Sources */,
+				6E11664B20CBCA0B00B7C042 /* URNCEInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

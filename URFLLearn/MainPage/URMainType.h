@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString  *name;
 @property (nonatomic, strong) NSString  *logoUrl;
+@property (nonatomic, strong) NSString  *typeId;
 
 @end
