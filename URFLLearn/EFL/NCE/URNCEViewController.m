@@ -64,6 +64,10 @@
     URNCEVolumeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCellIndetifer" forIndexPath:indexPath];
     NSString *logoUrl = [self.volumesArray objectAtIndex:indexPath.row];
     cell.logoUrl = logoUrl;
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+
     return cell;
 }
 

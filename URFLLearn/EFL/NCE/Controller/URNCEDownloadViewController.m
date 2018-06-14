@@ -10,8 +10,10 @@
 #import "Masonry.h"
 #import "AFNetworking.h"
 #import "URNCEDownloadTableViewCell.h"
+#import <objc/runtime.h>
+#import "URDownloadFileUtils.h"
 
-@interface URNCEDownloadViewController ()<UITableViewDelegate, UITableViewDataSource, NSURLSessionDownloadDelegate>
+@interface URNCEDownloadViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView  *downloadList;
 
@@ -71,69 +73,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self downloadPackage:indexPath.row];
-}
+    NSString *url = [self.volumeInfo objectAtIndex:indexPath.row];
 
-- (void)downloadPackage:(NSUInteger)index
-{
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    NSURL *url = [NSURL URLWithString:@"http://makefriends.bs2dl.yy.com/NCE1_1.zip"];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    
-//    NSCachedURLResponse *response = [configuration.URLCache cachedResponseForRequest:req];
-    
-//    [req setvalue:range for]
-    
-//    manager downloadTaskWithResumeData:<#(nonnull NSData *)#> progress:<#^(NSProgress * _Nonnull downloadProgress)downloadProgressBlock#> destination:<#^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response)destination#> completionHandler:<#^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error)completionHandler#>
-    
-    
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:req progress:^(NSProgress *downloadProgress){
+    [[URDownloadFileUtils sharedObject] downloadFile:url dest:nil progress:^(CGFloat progress) {
         
-        NSLog(@"++++++++++++++++++++ %f", 100.0 * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
+    } completionHandler:^{
         
-        } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-        
-            NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSCachesDirectory
-                                                                              inDomain:NSUserDomainMask
-                                                                     appropriateForURL:nil
-                                                                                create:NO
-                                                                                 error:nil];
-
-            NSURL *newUrl = [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-            NSLog(@"newUrl %@", newUrl.absoluteString);
-            return newUrl;
-        
-    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-        NSLog(@"file path %@", filePath);
     }];
-    
-    [downloadTask resume];
 }
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
-      didWriteData:(int64_t)bytesWritten
- totalBytesWritten:(int64_t)totalBytesWritten
-totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
-{
-    
-}
-
-- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
- didResumeAtOffset:(int64_t)fileOffset
-expectedTotalBytes:(int64_t)expectedTotalBytes
-{
-    
-}
-
-//- (void)loadVolumeDict
-//{
-//    self.volumeDict = @{ @"1" : @[@"http://makefriends.bs2dl.yy.com/NCE1_1.zip",
-//                                  @"http://makefriends.bs2dl.yy.com/NCE1_2.zip",
-//                                  @"http://makefriends.bs2dl.yy.com/NCE1_3.zip",
-//                                  @"http://makefriends.bs2dl.yy.com/NCE1_4.zip"] };
-//}
-
 
 @end

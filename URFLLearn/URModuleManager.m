@@ -21,11 +21,11 @@
 
 + (instancetype)sharedObject
 {
-    static dispatch_once_t __once;              \
-    static URModuleManager * __instance = nil;         \
-    dispatch_once(&__once, ^{                   \
-        __instance = [[URModuleManager alloc] init];   \
-    });                                         \
+    static dispatch_once_t __once;
+    static URModuleManager * __instance = nil;
+    dispatch_once(&__once, ^{
+        __instance = [[URModuleManager alloc] init];
+    });                                         
     return __instance;
 }
 

@@ -18,6 +18,7 @@
 		6E11677520CCC74700B7C042 /* URNCECore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677420CCC74700B7C042 /* URNCECore.m */; };
 		6E11677920CCD15700B7C042 /* URNCEDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677820CCD15700B7C042 /* URNCEDownloadViewController.m */; };
 		6E11677C20CE198700B7C042 /* URNCEDownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677B20CE198700B7C042 /* URNCEDownloadTableViewCell.m */; };
+		6E11678820D1172E00B7C042 /* URDownloadFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11678720D1172E00B7C042 /* URDownloadFileUtils.m */; };
 		6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61772D20995F25009A5D02 /* AppDelegate.m */; };
 		6E61773420995F25009A5D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773220995F25009A5D02 /* Main.storyboard */; };
 		6E61773620995F27009A5D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773520995F27009A5D02 /* Assets.xcassets */; };
@@ -97,6 +98,8 @@
 		6E11677820CCD15700B7C042 /* URNCEDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEDownloadViewController.m; sourceTree = "<group>"; };
 		6E11677A20CE198700B7C042 /* URNCEDownloadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEDownloadTableViewCell.h; sourceTree = "<group>"; };
 		6E11677B20CE198700B7C042 /* URNCEDownloadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEDownloadTableViewCell.m; sourceTree = "<group>"; };
+		6E11678620D1172E00B7C042 /* URDownloadFileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URDownloadFileUtils.h; sourceTree = "<group>"; };
+		6E11678720D1172E00B7C042 /* URDownloadFileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URDownloadFileUtils.m; sourceTree = "<group>"; };
 		6E61772920995F25009A5D02 /* URFLLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URFLLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61772C20995F25009A5D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E61772D20995F25009A5D02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -435,6 +438,8 @@
 			children = (
 				6ECB0066209B244F00870514 /* URFLNetUtils.h */,
 				6ECB0067209B244F00870514 /* URFLNetUtils.m */,
+				6E11678620D1172E00B7C042 /* URDownloadFileUtils.h */,
+				6E11678720D1172E00B7C042 /* URDownloadFileUtils.m */,
 			);
 			path = Net;
 			sourceTree = "<group>";
@@ -754,6 +759,7 @@
 				6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */,
 				6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */,
 				6ECB00E520A3205900870514 /* EFLCore.m in Sources */,
+				6E11678820D1172E00B7C042 /* URDownloadFileUtils.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
 				6E11663420C8D7EA00B7C042 /* URMainLessionTableViewCell.m in Sources */,
 				6E884E9E20BD2DCD0013ABBE /* EFLModule.m in Sources */,
