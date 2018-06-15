@@ -19,4 +19,6 @@
             progress:(void(^)(CGFloat progress))progress
    completionHandler:(void(^)(void))completionHandler;
 
+- (void)removeTmpFile:(NSString *)url;
+
 @end

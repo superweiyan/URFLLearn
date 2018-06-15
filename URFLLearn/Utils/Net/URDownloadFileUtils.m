@@ -16,7 +16,7 @@ NSString * const DownloadPathProperty = @"path";
 
 @interface URDownloadFileUtils()
 
-@property (nonatomic, strong) NSMutableArray *downloadTasks;
+@property (nonatomic, strong) NSMutableDictionary *downloadTasksDict;
 @end
 
 @implementation URDownloadFileUtils
@@ -35,7 +35,7 @@ NSString * const DownloadPathProperty = @"path";
 {
     self = [super init];
     if (self) {
-        self.downloadTasks = [[NSMutableArray alloc] init];
+        self.downloadTasksDict = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -69,6 +69,8 @@ NSString * const DownloadPathProperty = @"path";
             
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
             
+            [weakSelf clearDownloadManager:url];
+            
             if(completionHandler) {
                 completionHandler();
             }
@@ -89,7 +91,9 @@ NSString * const DownloadPathProperty = @"path";
             return [weakSelf getNewPath:dest];
             
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-            NSLog(@"file path %@", filePath);
+            
+            [weakSelf clearDownloadManager:url];
+            
         }];
         
         if(!downloadTask) {
@@ -106,7 +110,31 @@ NSString * const DownloadPathProperty = @"path";
     }
     
     [downloadTask resume];
+    
+    [self.downloadTasksDict setObject:manager forKey:url];
 }
+
+- (void)removeTmpFile:(NSString *)url
+{
+    NSString *tmpFileName = [self checkTempFileForUrl:url];
+    
+    if (tmpFileName.length > 0) {
+        NSString *tempPath = NSTemporaryDirectory();
+        NSString *tempFile = [tempPath stringByAppendingPathComponent:tmpFileName];
+        [[NSFileManager defaultManager] removeItemAtPath:tempFile error:nil];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:url];
+    }
+}
+
+- (void)clearDownloadManager:(NSString *)url
+{
+    AFURLSessionManager *manager = [self.downloadTasksDict objectForKey:url];
+    if (manager) {
+        [manager.session invalidateAndCancel];
+    }
+}
+
+#pragma mark - utils
 
 - (NSString *)checkTempFileForUrl:(NSString *)url
 {
@@ -123,10 +151,8 @@ NSString * const DownloadPathProperty = @"path";
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:url];
         }
     }
-    
     return nil;
 }
-
 
 /**
  * @param
@@ -220,7 +246,6 @@ NSString * const DownloadPathProperty = @"path";
         }
     }
     free(properties);
-    
     return resultFileName;
 }
 
