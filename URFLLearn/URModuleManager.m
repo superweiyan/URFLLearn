@@ -9,7 +9,7 @@
 #import "URModuleManager.h"
 #import "UREFLDialogueModule.h"
 #import "URUniqueManager.h"
-//#import "EFLModule.h"
+#import "URNCEModule.h"
 
 @interface URModuleManager()
 
@@ -39,6 +39,7 @@
         
         self.eFLDialogueModule = [[UREFLDialogueModule alloc] init];
         self.uniqueManager = [[URUniqueManager alloc] init];
+        self.nceModule = [[URNCEModule alloc] init];
         
         [self registerModule:@"EFLModule"];
     }

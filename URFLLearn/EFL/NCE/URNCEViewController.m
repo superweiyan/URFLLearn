@@ -75,9 +75,9 @@
 {
     URNCEDownloadViewController *controller = [[URNCEDownloadViewController alloc] init];
     controller.volumeInfo = @[@"http://makefriends.bs2dl.yy.com/NCE1_1.zip",
-                              @"http://makefriends.bs2dl.yy.com/NCE1_1.zip",
-                              @"http://makefriends.bs2dl.yy.com/NCE1_1.zip",
-                              @"http://makefriends.bs2dl.yy.com/NCE1_1.zip"];
+                              @"http://makefriends.bs2dl.yy.com/NCE1_2.zip",
+                              @"http://makefriends.bs2dl.yy.com/NCE1_3.zip",
+                              @"http://makefriends.bs2dl.yy.com/NCE1_4.zip"];
     
     [self.navigationController pushViewController:controller animated:YES];
 }

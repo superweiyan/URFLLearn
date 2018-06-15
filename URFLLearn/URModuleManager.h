@@ -10,11 +10,13 @@
 
 @class UREFLDialogueModule;
 @class URUniqueManager;
+@class URNCEModule;
 
 @interface URModuleManager : NSObject
 
 @property (nonatomic, strong) UREFLDialogueModule       *eFLDialogueModule;
 @property (nonatomic, strong) URUniqueManager           *uniqueManager;
+@property (nonatomic, strong) URNCEModule               *nceModule;
 
 + (instancetype)sharedObject;
 

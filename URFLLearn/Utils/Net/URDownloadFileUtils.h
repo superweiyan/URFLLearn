@@ -17,7 +17,7 @@
 - (void)downloadFile:(NSString *)url
                 dest:(NSString *)dest
             progress:(void(^)(CGFloat progress))progress
-   completionHandler:(void(^)(void))completionHandler;
+   completionHandler:(void(^)(NSString *filePath))completionHandler;
 
 - (void)removeTmpFile:(NSString *)url;
 

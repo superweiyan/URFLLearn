@@ -43,7 +43,7 @@ NSString * const DownloadPathProperty = @"path";
 - (void)downloadFile:(NSString *)url
                 dest:(NSString *)dest
             progress:(void(^)(CGFloat progress))progress
-   completionHandler:(void(^)(void))completionHandler
+   completionHandler:(void(^)(NSString *filePath))completionHandler
 {
 
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -72,7 +72,7 @@ NSString * const DownloadPathProperty = @"path";
             [weakSelf clearDownloadManager:url];
             
             if(completionHandler) {
-                completionHandler();
+                completionHandler(filePath.absoluteString);
             }
         }];
     }
@@ -93,15 +93,12 @@ NSString * const DownloadPathProperty = @"path";
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
             
             [weakSelf clearDownloadManager:url];
-            
+            if (completionHandler) {
+                completionHandler(filePath.absoluteString);
+            }
         }];
         
-        if(!downloadTask) {
-            if (completionHandler) {
-                completionHandler();
-            }
-        }
-        else {
+        if(downloadTask) {
             // 保存
             NSString *tmpPath = [self tempCacheFileNameForTask:downloadTask];
             [[NSUserDefaults standardUserDefaults] setObject:tmpPath forKey:url];

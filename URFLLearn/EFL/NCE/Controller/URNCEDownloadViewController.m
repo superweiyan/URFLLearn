@@ -7,11 +7,15 @@
 //
 
 #import "URNCEDownloadViewController.h"
+
 #import "Masonry.h"
 #import "AFNetworking.h"
 #import "URNCEDownloadTableViewCell.h"
-#import <objc/runtime.h>
 #import "URDownloadFileUtils.h"
+#import "URModuleManager.h"
+#import "URNCEModule.h"
+
+#import <objc/runtime.h>
 
 @interface URNCEDownloadViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -62,24 +66,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     URNCEDownloadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"downloadIndentifier"];
-    cell.textLabel.text = [NSString stringWithFormat:@"新概念英语%ld",  indexPath.row];
+    cell.tipName = [NSString stringWithFormat:@"新概念英语%ld",  indexPath.row];
+    if (indexPath.row < self.volumeInfo.count) {
+        cell.url = [self.volumeInfo objectAtIndex:indexPath.row];
+    }
+    
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 80;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *url = [self.volumeInfo objectAtIndex:indexPath.row];
-
-    [[URDownloadFileUtils sharedObject] downloadFile:url dest:nil progress:^(CGFloat progress) {
-        
-    } completionHandler:^{
-        
-    }];
+    [[URModuleManager sharedObject].nceModule downloadFileForUrl:url];
 }
 
 @end

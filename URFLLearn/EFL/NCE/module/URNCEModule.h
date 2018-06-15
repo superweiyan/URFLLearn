@@ -12,4 +12,6 @@
 
 - (void)downloadFileForUrl:(NSString *)url dest:(NSString *)dest completeHandler:(void (^)(void))completeHandler;
 
+- (void)downloadFileForUrl:(NSString *)url;
+
 @end

@@ -20,6 +20,7 @@
 		6E11677C20CE198700B7C042 /* URNCEDownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11677B20CE198700B7C042 /* URNCEDownloadTableViewCell.m */; };
 		6E11678820D1172E00B7C042 /* URDownloadFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11678720D1172E00B7C042 /* URDownloadFileUtils.m */; };
 		6E11679920D3602100B7C042 /* URNCEModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11679820D3602100B7C042 /* URNCEModule.m */; };
+		6E11679C20D36B9F00B7C042 /* URNCEType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11679B20D36B9F00B7C042 /* URNCEType.m */; };
 		6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61772D20995F25009A5D02 /* AppDelegate.m */; };
 		6E61773420995F25009A5D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773220995F25009A5D02 /* Main.storyboard */; };
 		6E61773620995F27009A5D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61773520995F27009A5D02 /* Assets.xcassets */; };
@@ -103,6 +104,8 @@
 		6E11678720D1172E00B7C042 /* URDownloadFileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URDownloadFileUtils.m; sourceTree = "<group>"; };
 		6E11679720D3602100B7C042 /* URNCEModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEModule.h; sourceTree = "<group>"; };
 		6E11679820D3602100B7C042 /* URNCEModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEModule.m; sourceTree = "<group>"; };
+		6E11679A20D36B9F00B7C042 /* URNCEType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URNCEType.h; sourceTree = "<group>"; };
+		6E11679B20D36B9F00B7C042 /* URNCEType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URNCEType.m; sourceTree = "<group>"; };
 		6E61772920995F25009A5D02 /* URFLLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URFLLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61772C20995F25009A5D02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E61772D20995F25009A5D02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				6E11677420CCC74700B7C042 /* URNCECore.m */,
 				6E11679720D3602100B7C042 /* URNCEModule.h */,
 				6E11679820D3602100B7C042 /* URNCEModule.m */,
+				6E11679A20D36B9F00B7C042 /* URNCEType.h */,
+				6E11679B20D36B9F00B7C042 /* URNCEType.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -781,6 +786,7 @@
 				6ECB00A120A062A000870514 /* URUniqueManager.m in Sources */,
 				6E61772E20995F25009A5D02 /* AppDelegate.m in Sources */,
 				6ECB00D520A31FFF00870514 /* UREFLAudioDialogueTableViewCell.m in Sources */,
+				6E11679C20D36B9F00B7C042 /* URNCEType.m in Sources */,
 				6E884EB020BD35690013ABBE /* EFLLessonUtils.m in Sources */,
 				6E11664B20CBCA0B00B7C042 /* URNCEInfoViewController.m in Sources */,
 			);

@@ -10,4 +10,8 @@
 
 @interface URNCEDownloadTableViewCell : UITableViewCell
 
+@property (nonatomic,   strong) NSString *tipName;
+@property (nonatomic,   assign) CGFloat  progressValue;
+@property (nonatomic,   strong) NSString *url;
+
 @end
