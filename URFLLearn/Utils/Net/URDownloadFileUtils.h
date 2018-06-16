@@ -15,7 +15,7 @@
 + (instancetype)sharedObject;
 
 - (void)downloadFile:(NSString *)url
-                dest:(NSString *)dest
+                dest:(NSURL *)dest
             progress:(void(^)(CGFloat progress))progress
    completionHandler:(void(^)(NSString *filePath))completionHandler;
 

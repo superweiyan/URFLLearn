@@ -61,7 +61,7 @@
 - (void)initNotification
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(DownloadProgressNotification:)
+                                             selector:@selector(downloadProgressNotification:)
                                                  name:kDownloadProgressNotification
                                                object:nil];
 }
@@ -99,7 +99,7 @@
 
 #pragma mark - notification
 
-- (void)DownloadProgressNotification:(NSNotification *)notification
+- (void)downloadProgressNotification:(NSNotification *)notification
 {
     NSString *url = [notification.userInfo objectForKey:@"url"];
     NSNumber *progressNumber = [notification.userInfo objectForKey:@"progress"];

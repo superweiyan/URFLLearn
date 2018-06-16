@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import <objc/runtime.h>
 #import "URCommonMarco.h"
+#import "URFileUtils.h"
 
 NSString * const DownloadFileProperty = @"downloadFile";
 NSString * const DownloadPathProperty = @"path";
@@ -41,7 +42,7 @@ NSString * const DownloadPathProperty = @"path";
 }
 
 - (void)downloadFile:(NSString *)url
-                dest:(NSString *)dest
+                dest:(NSURL *)dest
             progress:(void(^)(CGFloat progress))progress
    completionHandler:(void(^)(NSString *filePath))completionHandler
 {
@@ -65,14 +66,20 @@ NSString * const DownloadPathProperty = @"path";
             
         } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
             
-            return [weakSelf getNewPath:response.suggestedFilename];
+            if (dest) {
+                return dest;
+            }
+            
+            NSString *path = [[URFileUtils getCacheDir] stringByAppendingPathComponent:@"download"];
+            path = [path stringByAppendingPathComponent:response.suggestedFilename];
+            return [NSURL fileURLWithPath:path];
             
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
             
             [weakSelf clearDownloadManager:url];
             
             if(completionHandler) {
-                completionHandler(filePath.absoluteString);
+                completionHandler([filePath path]);
             }
         }];
     }
@@ -88,13 +95,19 @@ NSString * const DownloadPathProperty = @"path";
             
         } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
             
-            return [weakSelf getNewPath:dest];
-            
+            if (dest) {
+                return dest;
+            }
+
+            NSString *path = [[URFileUtils getCacheDir] stringByAppendingPathComponent:@"download"];
+            path = [path stringByAppendingPathComponent:response.suggestedFilename];
+            return [NSURL fileURLWithPath:path];
+
         } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
             
             [weakSelf clearDownloadManager:url];
             if (completionHandler) {
-                completionHandler(filePath.absoluteString);
+                completionHandler([filePath path]);
             }
         }];
         
@@ -189,18 +202,18 @@ NSString * const DownloadPathProperty = @"path";
     return resultData;
 }
 
-- (NSURL *)getNewPath:(NSString *)name
-{
-    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSCachesDirectory
-                                                                          inDomain:NSUserDomainMask
-                                                                 appropriateForURL:nil
-                                                                            create:NO
-                                                                             error:nil];
-    
-    NSURL *newUrl = [documentsDirectoryURL URLByAppendingPathComponent:name];
-    NSLog(@"newUrl %@", newUrl.absoluteString);
-    return newUrl;
-}
+//- (NSURL *)getNewPath:(NSString *)name
+//{
+//    NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSCachesDirectory
+//                                                                          inDomain:NSUserDomainMask
+//                                                                 appropriateForURL:nil
+//                                                                            create:NO
+//                                                                             error:nil];
+//
+//    NSURL *newUrl = [documentsDirectoryURL URLByAppendingPathComponent:name];
+//    NSLog(@"newUrl %@", newUrl.absoluteString);
+//    return newUrl;
+//}
 
 - (NSString *)tempCacheFileNameForTask:(NSURLSessionDownloadTask *)downloadTask
 {

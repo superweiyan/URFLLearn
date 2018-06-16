@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E042A7820D4C1BB00C21CB1 /* URFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E042A7720D4C1BB00C21CB1 /* URFileUtils.m */; };
 		6E11663120C8D7CE00B7C042 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11662F20C8D7CE00B7C042 /* ViewController.m */; };
 		6E11663420C8D7EA00B7C042 /* URMainLessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663320C8D7EA00B7C042 /* URMainLessionTableViewCell.m */; };
 		6E11663720C932F200B7C042 /* URMainType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E11663620C932F200B7C042 /* URMainType.m */; };
@@ -78,6 +79,8 @@
 /* Begin PBXFileReference section */
 		07508C9FC901B7DE2BA8E386 /* Pods-URFLLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		6987657F61A977D66274B525 /* Pods_URFLLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URFLLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E042A7620D4C1BB00C21CB1 /* URFileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URFileUtils.h; sourceTree = "<group>"; };
+		6E042A7720D4C1BB00C21CB1 /* URFileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URFileUtils.m; sourceTree = "<group>"; };
 		6E11662F20C8D7CE00B7C042 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6E11663020C8D7CE00B7C042 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6E11663220C8D7EA00B7C042 /* URMainLessionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URMainLessionTableViewCell.h; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				6ECB009E20A0627E00870514 /* Unique */,
 				6ECB0065209B242000870514 /* Net */,
 				6ECB005E209B232400870514 /* Category */,
+				6E042A7620D4C1BB00C21CB1 /* URFileUtils.h */,
+				6E042A7720D4C1BB00C21CB1 /* URFileUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -764,6 +769,7 @@
 				6E11677920CCD15700B7C042 /* URNCEDownloadViewController.m in Sources */,
 				6E884E9B20BD2A3B0013ABBE /* NSDictionary+Utils.m in Sources */,
 				6E11679920D3602100B7C042 /* URNCEModule.m in Sources */,
+				6E042A7820D4C1BB00C21CB1 /* URFileUtils.m in Sources */,
 				6ECB00D420A31FFF00870514 /* URAudioNoteView.m in Sources */,
 				6E884EA420BD31780013ABBE /* UREFLDialogueModule.m in Sources */,
 				6E11677520CCC74700B7C042 /* URNCECore.m in Sources */,

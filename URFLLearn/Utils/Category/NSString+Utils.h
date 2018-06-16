@@ -12,4 +12,6 @@
 
 - (NSDictionary *)convertJson;
 
+- (NSString *)md5String;
+
 @end
