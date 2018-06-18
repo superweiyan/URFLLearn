@@ -14,7 +14,7 @@
 #import "SSZipArchive.h"
 #import "URCommonMarco.h"
 
-@interface URNCEModule()
+@interface URNCEModule()<SSZipArchiveDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *urlHashDict;
 
@@ -63,13 +63,30 @@
 - (void)upzipFile:(NSString *)filePath url:(NSString *)url
 {
     NSString *hashValue = [self getHashName:url];
-    NSString *path = [[URFileUtils getCacheDir] stringByAppendingPathComponent:hashValue];
-
-    [[NSFileManager defaultManager] moveItemAtPath:filePath toPath:path error:nil];
+    NSString *hashPath = [[URFileUtils getCacheDir] stringByAppendingPathComponent:hashValue];
     
-    if([SSZipArchive unzipFileAtPath:path toDestination:[URFileUtils getCacheDir]]) {
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    NSString *zipFileName = filePath.lastPathComponent;
+    NSString *lastComponent = zipFileName.stringByDeletingPathExtension;
+    NSString *zipFullPath = [[URFileUtils getCacheDir] stringByAppendingPathComponent:lastComponent];
+    
+    if([SSZipArchive unzipFileAtPath:filePath
+                       toDestination:[URFileUtils getCacheDir]
+                     progressHandler:nil
+                   completionHandler:^(NSString * _Nonnull path, BOOL succeeded, NSError * _Nullable error) {
+                       
+                       if (succeeded) {
+                           [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+                           [[NSFileManager defaultManager] moveItemAtPath:zipFullPath toPath:hashPath error:nil];
+                       }
+                       else {
+                           
+                       }
+        
+    }])
+    {
     }
+    
+    
 }
 
 - (BOOL)checkDownloadFile:(NSString *)url
@@ -109,6 +126,11 @@
     NSString *hashValue = [url md5String];
     [self.urlHashDict setObject:hashValue forKey:url];
     return hashValue;
+}
+        
+- (void)zipArchiveDidUnzipArchiveAtPath:(NSString *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(NSString *)unzippedPath
+{
+    NSLog(@"+++ %@, %@", path, unzippedPath);
 }
 
 @end
