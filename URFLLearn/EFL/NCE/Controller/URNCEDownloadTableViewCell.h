@@ -13,5 +13,6 @@
 @property (nonatomic,   strong) NSString *tipName;
 @property (nonatomic,   assign) CGFloat  progressValue;
 @property (nonatomic,   strong) NSString *url;
+@property (nonatomic,   assign) BOOL     hadDownload;
 
 @end

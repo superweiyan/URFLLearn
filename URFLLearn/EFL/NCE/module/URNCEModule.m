@@ -16,7 +16,8 @@
 
 @interface URNCEModule()<SSZipArchiveDelegate>
 
-@property (nonatomic, strong) NSMutableDictionary *urlHashDict;
+@property (nonatomic, strong) NSMutableDictionary   *urlHashDict;
+@property (nonatomic, strong) NSMutableDictionary   *fileCacheDict;
 
 @end
 
@@ -28,6 +29,7 @@
     self = [super init];
     if (self) {
         self.urlHashDict = [[NSMutableDictionary alloc] init];
+        self.fileCacheDict = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -69,6 +71,7 @@
     NSString *lastComponent = zipFileName.stringByDeletingPathExtension;
     NSString *zipFullPath = [[URFileUtils getCacheDir] stringByAppendingPathComponent:lastComponent];
     
+    WeakSelf
     if([SSZipArchive unzipFileAtPath:filePath
                        toDestination:[URFileUtils getCacheDir]
                      progressHandler:nil
@@ -77,16 +80,12 @@
                        if (succeeded) {
                            [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
                            [[NSFileManager defaultManager] moveItemAtPath:zipFullPath toPath:hashPath error:nil];
+                           [weakSelf addDownloadRecordCache:url];
                        }
                        else {
-                           
                        }
-        
-    }])
-    {
-    }
-    
-    
+                   }])
+    {}
 }
 
 - (BOOL)checkDownloadFile:(NSString *)url
@@ -127,10 +126,45 @@
     [self.urlHashDict setObject:hashValue forKey:url];
     return hashValue;
 }
+
+- (BOOL)hadDownloadCache:(NSString *)url
+{
+    NSNumber *result = [self.fileCacheDict objectForKey:url];
+    if (result.boolValue) {
+        return result.boolValue;
+    }
+    
+    BOOL res = [self hadDownloadedFile:url];
+    if(res) {
+        [self.fileCacheDict setObject:@(1) forKey:url];
+    }
+    else {
+        [self.fileCacheDict setObject:@(0) forKey:url];
+    }
+    
+    return res;
+}
+
+- (void)removeCache
+{
+    [self.fileCacheDict removeAllObjects];
+}
         
 - (void)zipArchiveDidUnzipArchiveAtPath:(NSString *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(NSString *)unzippedPath
 {
-    NSLog(@"+++ %@, %@", path, unzippedPath);
+//    NSLog(@"+++ %@, %@", path, unzippedPath);
+}
+
+#pragma mark - delegate
+
+- (void)addDownloadRecordCache:(NSString *)url
+{
+    [self.fileCacheDict setObject:@(1) forKey:url];
+}
+
+- (void)removeDownloadRecordCache:(NSString *)url
+{
+    [self.fileCacheDict removeObjectForKey:url];
 }
 
 @end

@@ -68,7 +68,9 @@
     URNCEDownloadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"downloadIndentifier"];
     cell.tipName = [NSString stringWithFormat:@"新概念英语%ld",  indexPath.row];
     if (indexPath.row < self.volumeInfo.count) {
-        cell.url = [self.volumeInfo objectAtIndex:indexPath.row];
+        NSString *url = [self.volumeInfo objectAtIndex:indexPath.row];
+        cell.url = url;
+        cell.hadDownload = [[URModuleManager sharedObject].nceModule hadDownloadCache:url];
     }
     
     [cell setNeedsUpdateConstraints];
@@ -79,7 +81,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

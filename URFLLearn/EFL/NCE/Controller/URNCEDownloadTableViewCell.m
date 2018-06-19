@@ -77,6 +77,11 @@
     [self.downloadProgressView setProgress:progressValue animated:YES];
 }
 
+- (void)setHadDownload:(BOOL)hadDownload
+{
+    self.downloadFlagImage.hidden = !hadDownload;
+}
+
 - (void)updateConstraints
 {
     [self.downloadFlagImage mas_makeConstraints:^(MASConstraintMaker *make) {

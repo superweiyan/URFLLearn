@@ -226,7 +226,7 @@ NSString * const DownloadPathProperty = @"path";
         const char* char_f = property_getName(property);
         NSString *propertyName = [NSString stringWithUTF8String:char_f];
         
-        NSLog(@"proertyName : %@", propertyName);
+//        NSLog(@"proertyName : %@", propertyName);
         
         if ([DownloadFileProperty isEqualToString:propertyName]) {
             id propertyValue = [downloadTask valueForKey:(NSString *)propertyName];
@@ -237,7 +237,7 @@ NSString * const DownloadPathProperty = @"path";
                 const char* downloadFilechar_f = property_getName(downloadFileproperty);
                 NSString *downloadFilepropertyName = [NSString stringWithUTF8String:downloadFilechar_f];
                 
-                NSLog(@"downloadFilepropertyName : %@", downloadFilepropertyName);
+//                NSLog(@"downloadFilepropertyName : %@", downloadFilepropertyName);
                 
                 if([DownloadPathProperty isEqualToString:downloadFilepropertyName]){
                     id downloadFilepropertyValue = [propertyValue valueForKey:(NSString *)downloadFilepropertyName];
@@ -245,7 +245,7 @@ NSString * const DownloadPathProperty = @"path";
                         resultFileName = [downloadFilepropertyValue lastPathComponent];
                         //应在此处存储缓存文件名
                         //......
-                        NSLog(@"broken down temp cache path : %@", resultFileName);
+//                        NSLog(@"broken down temp cache path : %@", resultFileName);
                     }
                     break;
                 }

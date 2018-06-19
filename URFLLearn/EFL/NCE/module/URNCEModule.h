@@ -18,4 +18,8 @@
 
 - (NSString *)getHashName:(NSString *)url;
 
+- (BOOL)hadDownloadCache:(NSString *)url;
+
+- (void)removeCache;
+
 @end
