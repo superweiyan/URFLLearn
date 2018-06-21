@@ -7,6 +7,8 @@
 //
 
 #import "URNCEInfoViewController.h"
+#import "URNCEModule.h"
+#import "URModuleManager.h"
 
 @interface URNCEInfoViewController ()
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,9 +39,16 @@
 }
 */
 
-- (void)setVolumeIndex:(NSUInteger)volumeIndex
+- (void)loadData
 {
+    NSString *jsonPath = [self.volumePath stringByAppendingPathComponent:@"content.json"];
+    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     
+    NSError* error;
+    NSArray* json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSLog(@"%@", json);
 }
 
 @end

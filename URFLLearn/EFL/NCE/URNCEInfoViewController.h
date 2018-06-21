@@ -10,6 +10,6 @@
 
 @interface URNCEInfoViewController : UIViewController
 
-@property (nonatomic, assign) NSUInteger volumeIndex;
+@property (nonatomic, strong) NSString *volumePath;
 
 @end

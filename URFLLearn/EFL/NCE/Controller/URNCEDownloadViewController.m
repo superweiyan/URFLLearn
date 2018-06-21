@@ -14,6 +14,7 @@
 #import "URDownloadFileUtils.h"
 #import "URModuleManager.h"
 #import "URNCEModule.h"
+#import "URNCEInfoViewController.h"
 
 #import <objc/runtime.h>
 
@@ -87,7 +88,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *url = [self.volumeInfo objectAtIndex:indexPath.row];
-    [[URModuleManager sharedObject].nceModule downloadFileForUrl:url];
+    NSString *filePath = [[URModuleManager sharedObject].nceModule hadDownloadedFile:url];
+    if(filePath.length > 0) {
+        URNCEInfoViewController *controller = [[URNCEInfoViewController alloc] init];
+        controller.volumePath = filePath;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else {
+        [[URModuleManager sharedObject].nceModule downloadFileForUrl:url];
+    }
 }
 
 @end

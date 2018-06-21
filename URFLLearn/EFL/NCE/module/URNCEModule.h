@@ -14,7 +14,7 @@
 
 - (void)downloadFileForUrl:(NSString *)url;
 
-- (BOOL)hadDownloadedFile:(NSString *)url;
+- (NSString *)hadDownloadedFile:(NSString *)url;
 
 - (NSString *)getHashName:(NSString *)url;
 

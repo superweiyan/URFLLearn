@@ -14,7 +14,7 @@
 #import "SSZipArchive.h"
 #import "URCommonMarco.h"
 
-@interface URNCEModule()<SSZipArchiveDelegate>
+@interface URNCEModule()
 
 @property (nonatomic, strong) NSMutableDictionary   *urlHashDict;
 @property (nonatomic, strong) NSMutableDictionary   *fileCacheDict;
@@ -82,8 +82,7 @@
                            [[NSFileManager defaultManager] moveItemAtPath:zipFullPath toPath:hashPath error:nil];
                            [weakSelf addDownloadRecordCache:url];
                        }
-                       else {
-                       }
+                       else {}
                    }])
     {}
 }
@@ -108,11 +107,14 @@
     return NO;
 }
 
-- (BOOL)hadDownloadedFile:(NSString *)url
+- (NSString *)hadDownloadedFile:(NSString *)url
 {
     NSString *hashFile = [self getHashName:url];
     NSString *filePath = [[URFileUtils getCacheDir] stringByAppendingPathComponent:hashFile];
-    return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        return filePath;
+    }
+    return nil;
 }
 
 - (NSString *)getHashName:(NSString *)url
@@ -134,7 +136,7 @@
         return result.boolValue;
     }
     
-    BOOL res = [self hadDownloadedFile:url];
+    NSString * res = [self hadDownloadedFile:url];
     if(res) {
         [self.fileCacheDict setObject:@(1) forKey:url];
     }
@@ -142,17 +144,12 @@
         [self.fileCacheDict setObject:@(0) forKey:url];
     }
     
-    return res;
+    return res.length != 0;
 }
 
 - (void)removeCache
 {
     [self.fileCacheDict removeAllObjects];
-}
-        
-- (void)zipArchiveDidUnzipArchiveAtPath:(NSString *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(NSString *)unzippedPath
-{
-//    NSLog(@"+++ %@, %@", path, unzippedPath);
 }
 
 #pragma mark - delegate
