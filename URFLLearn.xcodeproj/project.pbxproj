@@ -39,6 +39,7 @@
 		6E884EB220BD35690013ABBE /* EFL.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E884EAD20BD35690013ABBE /* EFL.json */; };
 		6E884EB320BD35690013ABBE /* EFLTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EAF20BD35690013ABBE /* EFLTypes.m */; };
 		6E884EB620BD368B0013ABBE /* EFLLessonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E884EB520BD368B0013ABBE /* EFLLessonCollectionViewCell.m */; };
+		6EA79FEB20F60A1E00AA523B /* URTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA79FEA20F60A1E00AA523B /* URTestViewController.m */; };
 		6ECB0059209AFAA500870514 /* URLayoutConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0058209AFAA500870514 /* URLayoutConfig.m */; };
 		6ECB0063209B232400870514 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0060209B232400870514 /* UIColor+Hex.m */; };
 		6ECB0064209B232400870514 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB0062209B232400870514 /* NSString+Utils.m */; };
@@ -56,6 +57,12 @@
 		6ECB00DE20A3202C00870514 /* URAudioLearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00DC20A3202C00870514 /* URAudioLearnViewController.m */; };
 		6ECB00E520A3205900870514 /* EFLCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECB00E120A3205900870514 /* EFLCore.m */; };
 		6ECB00F420A4247200870514 /* introduct_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6ECB00F320A4247200870514 /* introduct_logo.jpg */; };
+		6EEC24F320F703A9000DF024 /* URLyricTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC24F220F703A9000DF024 /* URLyricTestViewController.m */; };
+		6EEC24F620F72AF5000DF024 /* URLyricInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC24F520F72AF5000DF024 /* URLyricInfo.m */; };
+		6EFE917920F45B3D004E4728 /* 01－A Private Conversation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6EFE917720F45B3D004E4728 /* 01－A Private Conversation.mp3 */; };
+		6EFE917A20F45B3D004E4728 /* 01－A Private Conversation.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 6EFE917820F45B3D004E4728 /* 01－A Private Conversation.lrc */; };
+		6EFE917E20F45DCB004E4728 /* URLyricView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE917D20F45DCB004E4728 /* URLyricView.m */; };
+		6EFE918120F45FDB004E4728 /* URLyricModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE918020F45FDB004E4728 /* URLyricModule.m */; };
 		EF8466C3B2B939C0D55C35DD /* Pods_URFLLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6987657F61A977D66274B525 /* Pods_URFLLearn.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +148,8 @@
 		6E884EAF20BD35690013ABBE /* EFLTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLTypes.m; sourceTree = "<group>"; };
 		6E884EB420BD368B0013ABBE /* EFLLessonCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLLessonCollectionViewCell.h; sourceTree = "<group>"; };
 		6E884EB520BD368B0013ABBE /* EFLLessonCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLLessonCollectionViewCell.m; sourceTree = "<group>"; };
+		6EA79FE920F60A1E00AA523B /* URTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URTestViewController.h; sourceTree = "<group>"; };
+		6EA79FEA20F60A1E00AA523B /* URTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URTestViewController.m; sourceTree = "<group>"; };
 		6ECB0057209AFAA500870514 /* URLayoutConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLayoutConfig.h; sourceTree = "<group>"; };
 		6ECB0058209AFAA500870514 /* URLayoutConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLayoutConfig.m; sourceTree = "<group>"; };
 		6ECB005F209B232400870514 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
@@ -175,6 +184,16 @@
 		6ECB00E020A3205900870514 /* EFLCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFLCore.h; sourceTree = "<group>"; };
 		6ECB00E120A3205900870514 /* EFLCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFLCore.m; sourceTree = "<group>"; };
 		6ECB00F320A4247200870514 /* introduct_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = introduct_logo.jpg; sourceTree = "<group>"; };
+		6EEC24F120F703A9000DF024 /* URLyricTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLyricTestViewController.h; sourceTree = "<group>"; };
+		6EEC24F220F703A9000DF024 /* URLyricTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLyricTestViewController.m; sourceTree = "<group>"; };
+		6EEC24F420F72AF5000DF024 /* URLyricInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLyricInfo.h; sourceTree = "<group>"; };
+		6EEC24F520F72AF5000DF024 /* URLyricInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLyricInfo.m; sourceTree = "<group>"; };
+		6EFE917720F45B3D004E4728 /* 01－A Private Conversation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01－A Private Conversation.mp3"; sourceTree = "<group>"; };
+		6EFE917820F45B3D004E4728 /* 01－A Private Conversation.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "01－A Private Conversation.lrc"; sourceTree = "<group>"; };
+		6EFE917C20F45DCB004E4728 /* URLyricView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLyricView.h; sourceTree = "<group>"; };
+		6EFE917D20F45DCB004E4728 /* URLyricView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLyricView.m; sourceTree = "<group>"; };
+		6EFE917F20F45FDB004E4728 /* URLyricModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLyricModule.h; sourceTree = "<group>"; };
+		6EFE918020F45FDB004E4728 /* URLyricModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLyricModule.m; sourceTree = "<group>"; };
 		CD51C86C47BE966BC3DC591A /* Pods-URFLLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URFLLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-URFLLearn/Pods-URFLLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +312,7 @@
 		6E61772B20995F25009A5D02 /* URFLLearn */ = {
 			isa = PBXGroup;
 			children = (
+				6EA79FE820F609DE00AA523B /* Test */,
 				6E11662E20C8D7AB00B7C042 /* MainPage */,
 				6E884E8520B7B0D50013ABBE /* Plan */,
 				6E884E8420B7B0CE0013ABBE /* CheckIn */,
@@ -362,6 +382,7 @@
 		6E6177702099A09B009A5D02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6EFE917B20F45B81004E4728 /* Lyric */,
 				6ECB009E20A0627E00870514 /* Unique */,
 				6ECB0065209B242000870514 /* Net */,
 				6ECB005E209B232400870514 /* Category */,
@@ -374,6 +395,8 @@
 		6E6177762099B924009A5D02 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6EFE917820F45B3D004E4728 /* 01－A Private Conversation.lrc */,
+				6EFE917720F45B3D004E4728 /* 01－A Private Conversation.mp3 */,
 				6ECB00F220A4243600870514 /* Image */,
 			);
 			path = Resource;
@@ -431,6 +454,17 @@
 				6E884EAF20BD35690013ABBE /* EFLTypes.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6EA79FE820F609DE00AA523B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				6EA79FE920F60A1E00AA523B /* URTestViewController.h */,
+				6EA79FEA20F60A1E00AA523B /* URTestViewController.m */,
+				6EEC24F120F703A9000DF024 /* URLyricTestViewController.h */,
+				6EEC24F220F703A9000DF024 /* URLyricTestViewController.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		6ECB005E209B232400870514 /* Category */ = {
@@ -557,6 +591,19 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		6EFE917B20F45B81004E4728 /* Lyric */ = {
+			isa = PBXGroup;
+			children = (
+				6EFE917C20F45DCB004E4728 /* URLyricView.h */,
+				6EFE917D20F45DCB004E4728 /* URLyricView.m */,
+				6EFE917F20F45FDB004E4728 /* URLyricModule.h */,
+				6EFE918020F45FDB004E4728 /* URLyricModule.m */,
+				6EEC24F420F72AF5000DF024 /* URLyricInfo.h */,
+				6EEC24F520F72AF5000DF024 /* URLyricInfo.m */,
+			);
+			path = Lyric;
+			sourceTree = "<group>";
+		};
 		FD9B45E96F827841DC402356 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,6 +727,8 @@
 				6E61773620995F27009A5D02 /* Assets.xcassets in Resources */,
 				6ECB00F420A4247200870514 /* introduct_logo.jpg in Resources */,
 				6E61773420995F25009A5D02 /* Main.storyboard in Resources */,
+				6EFE917920F45B3D004E4728 /* 01－A Private Conversation.mp3 in Resources */,
+				6EFE917A20F45B3D004E4728 /* 01－A Private Conversation.lrc in Resources */,
 				6E884EB220BD35690013ABBE /* EFL.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +806,8 @@
 				6ECB00DD20A3202C00870514 /* URAudioInfoViewController.m in Sources */,
 				6E884EB120BD35690013ABBE /* UREFLViewController.m in Sources */,
 				6ECB00D720A31FFF00870514 /* URAudioInfoView.m in Sources */,
+				6EEC24F320F703A9000DF024 /* URLyricTestViewController.m in Sources */,
+				6EFE917E20F45DCB004E4728 /* URLyricView.m in Sources */,
 				6ECB0081209D5DE200870514 /* URModuleManager.m in Sources */,
 				6E884EB320BD35690013ABBE /* EFLTypes.m in Sources */,
 				6ECB0078209C7BB400870514 /* URCommonMarco.m in Sources */,
@@ -772,9 +823,11 @@
 				6E042A7820D4C1BB00C21CB1 /* URFileUtils.m in Sources */,
 				6ECB00D420A31FFF00870514 /* URAudioNoteView.m in Sources */,
 				6E884EA420BD31780013ABBE /* UREFLDialogueModule.m in Sources */,
+				6EEC24F620F72AF5000DF024 /* URLyricInfo.m in Sources */,
 				6E11677520CCC74700B7C042 /* URNCECore.m in Sources */,
 				6ECB0068209B244F00870514 /* URFLNetUtils.m in Sources */,
 				6ECB0084209D5E1500870514 /* URPathConfig.m in Sources */,
+				6EFE918120F45FDB004E4728 /* URLyricModule.m in Sources */,
 				6ECB00E520A3205900870514 /* EFLCore.m in Sources */,
 				6E11678820D1172E00B7C042 /* URDownloadFileUtils.m in Sources */,
 				6E61773C20995F27009A5D02 /* main.m in Sources */,
@@ -795,6 +848,7 @@
 				6E11679C20D36B9F00B7C042 /* URNCEType.m in Sources */,
 				6E884EB020BD35690013ABBE /* EFLLessonUtils.m in Sources */,
 				6E11664B20CBCA0B00B7C042 /* URNCEInfoViewController.m in Sources */,
+				6EA79FEB20F60A1E00AA523B /* URTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

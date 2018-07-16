@@ -13,6 +13,7 @@
 #import "URMainType.h"
 #import "NSObject+modelHeight.h"
 #import "URNCEViewController.h"
+#import "URTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, AutoLayoutTableViewCellDelegate>
 
@@ -27,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self configTestViewController];
     
     [self loadData];
     
@@ -84,7 +87,7 @@
     JPItem1.logoUrl = @"http://pic.pc6.com/up/2016-12/20161220195164315314.jpg";
     JPItem1.modelHeight = 0;
     JPItem1.typeId = @"JPWord";
-
+    
     self.JPItemArray = @[JPItem, JPItem1];
 }
 
@@ -104,8 +107,10 @@
 {
     if (section == 0) {
         return @"英语";
+    } else if( section == 1) {
+        return @"日语";
     }
-    return @"日语";
+    return @"";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -113,7 +118,10 @@
     if (section == 0) {
         return self.itemArray.count;
     }
-    return self.JPItemArray.count;
+    else if(section == 1) {
+        return self.JPItemArray.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -163,8 +171,11 @@
     if (indexPath.section == 0) {
         item = [self.itemArray objectAtIndex:indexPath.row];
     }
-    else {
+    else if (indexPath.section == 1){
         item = [self.JPItemArray objectAtIndex:indexPath.row];
+    }
+    else {
+    
     }
     
     if (item.modelHeight == 0) {
@@ -183,6 +194,21 @@
     [self.tableView beginUpdates];
     [self.tableView setNeedsUpdateConstraints];
     [self.tableView endUpdates];
+}
+
+- (void)configTestViewController
+{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"配置"
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(onJoinConfigViewController)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)onJoinConfigViewController
+{
+    URTestViewController *controller = [[URTestViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

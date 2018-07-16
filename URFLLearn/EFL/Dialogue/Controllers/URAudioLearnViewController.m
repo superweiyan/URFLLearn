@@ -23,6 +23,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.navigationItem.title = @"课程学习";
+    
     [self initViews];
     [self initData];
 }

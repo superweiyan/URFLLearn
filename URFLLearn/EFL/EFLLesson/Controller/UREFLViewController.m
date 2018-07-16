@@ -52,6 +52,8 @@
     EFLLessonCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cardIndentifier" forIndexPath:indexPath];
     if (indexPath.row < self.infoModel.count) {
         cell.infoModel = [self.infoModel objectAtIndex:indexPath.row];
+        [cell updateConstraintsIfNeeded];
+        [cell needsUpdateConstraints];
     }
     
     return cell;
