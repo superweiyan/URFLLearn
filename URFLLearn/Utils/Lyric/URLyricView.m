@@ -56,23 +56,6 @@
         self.lyricArray = [[NSMutableArray alloc] init];
     }
         
-//    if (lyricInfo.artist.length > 0) {
-//        [self.lyricArray addObject:lyricInfo.artist];
-//        [self.startTimeOffset addObject:@(0)];
-//    }
-//    else if (lyricInfo.title.length > 0) {
-//        [self.lyricArray addObject:lyricInfo.title];
-//        [self.startTimeOffset addObject:@(0)];
-//    }
-//    else if (lyricInfo.album.length > 0) {
-//        [self.lyricArray addObject:lyricInfo.album];
-//        [self.startTimeOffset addObject:@(0)];
-//    }
-//    else if (lyricInfo.byEdit.length > 0) {
-//        [self.lyricArray addObject:lyricInfo.byEdit];
-//        [self.startTimeOffset addObject:@(0)];
-//    }
-    
     NSArray *sortArray = [lyricInfo.itemArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         return ((URLyricData *)obj1).startOffsetTm > ((URLyricData *)obj2).startOffsetTm;
     }];
@@ -119,6 +102,18 @@
         return self.bounds.size.height/2;
     }
     return 40.0;
+}
+
+- (void)setCurrentPlayTm:(NSInteger)currentPlayTm
+{
+    for (int i = 0; i < self.startTimeOffset.count; i++) {
+        NSNumber *tm = [self.startTimeOffset objectAtIndex:i];
+        if (tm.integerValue == currentPlayTm) {
+            [self.infoTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(i+1) inSection:0]
+                                      atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+            break;
+        }
+    }
 }
 
 

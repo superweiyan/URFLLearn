@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) URLyricInfo *lyricInfo;
 
+@property (nonatomic, assign) NSInteger  currentPlayTm;
+
 @end
